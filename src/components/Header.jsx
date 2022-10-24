@@ -50,7 +50,7 @@ const Header = () => {
             exit={{ x: 100, opacity: 0 }}
             transition={{ ease: "easeInOut", duration: 0.5 }}
             key='burger'
-            className='md:hidden flex flex-col absolute h-screen top-0 right-0 w-1/2 justify-between py-8 items-center bg-[#F3FCF7]'>
+            className='md:hidden flex flex-col absolute h-screen top-0 right-0 w-full justify-between py-8 items-center bg-[#F3FCF7]'>
             <XMarkIcon
               className='w-12 cursor-pointer'
               onClick={() => setNavActive(false)}
