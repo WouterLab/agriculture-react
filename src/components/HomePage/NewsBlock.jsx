@@ -1,9 +1,9 @@
 import NewsItem from "./NewsItem";
 
-const HomeNewsBlock = () => {
+const NewsBlock = () => {
   const data = [
     {
-      id: 1,
+      id: 0,
       title:
         "Выставка «Золотая осень — 2022» представляет главные достижения российского АПК",
       date: new Date()
@@ -11,7 +11,7 @@ const HomeNewsBlock = () => {
         .split(",")[0],
     },
     {
-      id: 2,
+      id: 1,
       title:
         "Больше фермеров сажают покровные культуры для повышения урожайности и здоровья почвы",
       date: new Date()
@@ -19,7 +19,7 @@ const HomeNewsBlock = () => {
         .split(",")[0],
     },
     {
-      id: 3,
+      id: 2,
       title:
         "Экономический эффект от использования искусственного интеллекта в АПК достигает десятков процентов",
       date: new Date()
@@ -34,14 +34,14 @@ const HomeNewsBlock = () => {
       </h2>
       <div className='w-full'>
         {data.map((news) => (
-          <>
-            <NewsItem key={news.id} news={news} />
+          <div key={news.id}>
+            <NewsItem news={news} />
             <hr className='w-full mb-2' />
-          </>
+          </div>
         ))}
       </div>
     </div>
   );
 };
 
-export default HomeNewsBlock;
+export default NewsBlock;
