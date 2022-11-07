@@ -22,9 +22,9 @@ const Header = () => {
           active={currentPage.pathname === "/news"}
         />
         <NavButton
-          text='Статьи'
-          link='/articles'
-          active={currentPage.pathname === "/articles"}
+          text='Погода'
+          link='/weather'
+          active={currentPage.pathname === "/weather"}
         />
         <NavButton
           text='Обсуждения'
@@ -66,9 +66,9 @@ const Header = () => {
               active={currentPage.pathname === "/news"}
             />
             <NavButton
-              text='Статьи'
-              link='/articles'
-              active={currentPage.pathname === "/articles"}
+              text='Погода'
+              link='/weather'
+              active={currentPage.pathname === "/weather"}
             />
             <NavButton
               text='Обсуждения'
