@@ -22,6 +22,11 @@ const Header = () => {
           active={currentPage.pathname === "/news"}
         />
         <NavButton
+          text='Статьи'
+          link='/articles'
+          active={currentPage.pathname === "/articles"}
+        />
+        <NavButton
           text='Погода'
           link='/weather'
           active={currentPage.pathname === "/weather"}
@@ -30,11 +35,6 @@ const Header = () => {
           text='Обсуждения'
           link='/discussions'
           active={currentPage.pathname === "/discussions"}
-        />
-        <NavButton
-          text='Регистрация'
-          link='/signup'
-          active={currentPage.pathname === "/signup"}
         />
         <NavButton
           text='Вход'
@@ -66,6 +66,11 @@ const Header = () => {
               active={currentPage.pathname === "/news"}
             />
             <NavButton
+              text='Статьи'
+              link='/articles'
+              active={currentPage.pathname === "/articles"}
+            />
+            <NavButton
               text='Погода'
               link='/weather'
               active={currentPage.pathname === "/weather"}
@@ -74,11 +79,6 @@ const Header = () => {
               text='Обсуждения'
               link='/discussions'
               active={currentPage.pathname === "/discussions"}
-            />
-            <NavButton
-              text='Регистрация'
-              link='/signup'
-              active={currentPage.pathname === "/signup"}
             />
             <NavButton
               text='Вход'
