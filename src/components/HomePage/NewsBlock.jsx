@@ -29,7 +29,7 @@ const NewsBlock = () => {
   ];
   return (
     <div>
-      <h2 className='font-bold uppercase text-[#06C167] text-xl'>
+      <h2 className='font-bold uppercase text-green-500 text-xl mb-4'>
         Новости рынка
       </h2>
       <div className='w-full'>

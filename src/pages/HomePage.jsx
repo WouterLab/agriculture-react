@@ -1,3 +1,4 @@
+import AgropromDocs from '../components/AgropromDocs';
 import CurrentPrices from "../components/CurrentPrices";
 import HomeNewsBlock from "../components/HomePage/NewsBlock";
 import Layout from "../components/Layout";
@@ -37,6 +38,7 @@ const HomePage = () => {
         <h2 className='text-[#06C167] font-bold text-xl uppercase mb-4'>
           Документация
         </h2>
+        <AgropromDocs />
       </div>
     </Layout>
   );

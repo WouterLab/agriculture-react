@@ -50,7 +50,7 @@ const NewsPage = () => {
           животноводстве по крупному рогатому скоту, парнокопытному скоту и
           птице.
         </p>
-        <div className='w-3/5'>
+        <div className='w-3/5 mb-8'>
           {news.map((news) => (
             <NewsCard key={news.id} title={news.title} desc={news.desc} src={news.img} />
           ))}

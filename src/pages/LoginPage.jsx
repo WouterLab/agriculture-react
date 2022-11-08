@@ -15,14 +15,14 @@ const LoginPage = () => {
         <input
           type='password'
           placeholder='Пароль'
-          className='text-2xl focus:outline-none bg-white text-neutral-700 px-8 py-4 placeholder:text-neutral-700 rounded-xl mb-4 focus:border-green-600 border-green-400 border-2 transition-all duration-300'
+          className='text-2xl focus:outline-none bg-white text-neutral-700 px-8 py-4 placeholder:text-neutral-700 rounded-xl mb-8 focus:border-green-600 border-green-400 border-2 transition-all duration-300'
         />
         <div className='space-x-4'>
           <button className='rounded-2xl bg-green-400 text-2xl px-14 py-3 text-white hover:text-black hover:bg-white transition-all duration-300 cursor-pointer hover:border-2 border-2 border-green-400'>
             Войти
           </button>
           <Link to={'/signup'}>
-            <button className='rounded-2xl bg-green-400 text-2xl px-8 py-3 text-white hover:text-black hover:bg-white transition-all duration-300 cursor-pointer hover:border-2 border-2 border-green-400'>
+            <button className='rounded-2xl bg-neutral-400 text-2xl px-8 py-3 text-white hover:text-black hover:bg-white transition-all duration-300 cursor-pointer hover:border-2 border-2 border-neutral-400'>
               Регистрация
             </button>
           </Link>

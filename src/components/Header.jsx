@@ -1,5 +1,5 @@
 import NavButton from "../ui/NavButton";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Bars4Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { motion, AnimatePresence } from "framer-motion";
@@ -9,7 +9,9 @@ const Header = () => {
   const [isNavActive, setNavActive] = useState(false);
   return (
     <header className='fixed h-20 top-0 bg-[#F3FCF7] w-full flex justify-between items-center'>
-      <img className='w-16 ml-12' src='logo.png' alt='logo' />
+      <Link to='/'>
+        <img className='w-16 ml-12 cursor-pointer' src='logo.png' alt='logo' />
+      </Link>
       <div className='space-x-8 mr-12 hidden md:flex'>
         <NavButton
           text='Главная'
@@ -30,6 +32,11 @@ const Header = () => {
           text='Погода'
           link='/weather'
           active={currentPage.pathname === "/weather"}
+        />
+        <NavButton
+          text='Вакансии'
+          link='/vacancy'
+          active={currentPage.pathname === "/vacancy"}
         />
         <NavButton
           text='Обсуждения'
@@ -74,6 +81,11 @@ const Header = () => {
               text='Погода'
               link='/weather'
               active={currentPage.pathname === "/weather"}
+            />
+            <NavButton
+              text='Вакансии'
+              link='/vacancy'
+              active={currentPage.pathname === "/vacancy"}
             />
             <NavButton
               text='Обсуждения'
