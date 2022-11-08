@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
-import ThemeCard from "./ThemeCard";
+import PageTitle from "../components/PageTitle";
+import ThemeCard from "../components/ThemeCard";
 
 const DiscussionsPage = () => {
   const themes = [
@@ -22,7 +23,7 @@ const DiscussionsPage = () => {
   return (
     <Layout>
       <div className='flex flex-col items-center'>
-        <h1 className='text-[#06C167] text-6xl font-bold mb-4'>ОБСУЖДЕНИЯ</h1>
+        <PageTitle title='ОБСУЖДЕНИЯ' />
         <div className='flex flex-col items-center w-full'>
           <div className='flex flex-col sm:flex-row mb-4 sm:mb-0 items-center justify-between w-5/6'>
             <div>
@@ -36,7 +37,12 @@ const DiscussionsPage = () => {
               />
             </div>
             <div className='space-x-2 text-2xl sm:text-lg'>
-              <span>Страницы:</span> <Link to='/discussions/1' className='text-green-400 pointer-events-none'>1</Link>
+              <span>Страницы:</span>{" "}
+              <Link
+                to='/discussions/1'
+                className='text-green-400 pointer-events-none'>
+                1
+              </Link>
               <Link to='/discussions/2'>2</Link>
               <Link to='/discussions/3'>3</Link>
               <Link to='/discussions/4'>4</Link>

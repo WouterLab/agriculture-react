@@ -1,5 +1,6 @@
 import Layout from "../components/Layout";
 import NewsCard from "../components/NewsPage/NewsCard";
+import PageTitle from "../components/PageTitle";
 
 const NewsPage = () => {
   const news = [
@@ -41,7 +42,7 @@ const NewsPage = () => {
   return (
     <Layout>
       <div className='flex flex-col items-center'>
-        <h1 className='text-[#06C167] text-6xl font-bold mb-4'>НОВОСТИ</h1>
+        <PageTitle title='НОВОСТИ' />
         <p className='w-3/5 text-center text-xl mb-4'>
           В этом разделе вы найдете последние новости в области сельского
           хозяйства, в том числе новости о сельскохозяйственной политике,
@@ -52,7 +53,12 @@ const NewsPage = () => {
         </p>
         <div className='w-3/5 mb-8'>
           {news.map((news) => (
-            <NewsCard key={news.id} title={news.title} desc={news.desc} src={news.img} />
+            <NewsCard
+              key={news.id}
+              title={news.title}
+              desc={news.desc}
+              src={news.img}
+            />
           ))}
         </div>
       </div>

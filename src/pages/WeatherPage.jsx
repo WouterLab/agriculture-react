@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
+import PageTitle from "../components/PageTitle";
 import WeatherBlock from "../components/WeatherBlock";
 
 const WeatherPage = () => {
@@ -13,7 +14,7 @@ const WeatherPage = () => {
     clouds: undefined,
     error: undefined,
   };
-  const API_KEY = process.env.REACT_APP_OPENWEATHER_API_KEY;
+  const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
   const [info, setInfo] = useState(state);
   const [city, setCity] = useState("");
   const getWeather = (e) => {
@@ -39,7 +40,7 @@ const WeatherPage = () => {
   return (
     <Layout>
       <div className='flex flex-col items-center'>
-        <h1 className='text-[#06C167] text-6xl font-bold mb-4'>ПОГОДА</h1>
+        <PageTitle title='ПОГОДА' />
         <p className='w-3/5 text-center text-xl mb-4'>
           Будьте в курсе текущих погодных условий для вашей фермы, включая
           температуру, скорость ветра и видимость. Эта страница также содержит

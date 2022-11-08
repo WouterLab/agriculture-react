@@ -1,10 +1,11 @@
 import Layout from "../components/Layout";
+import PageTitle from "../components/PageTitle";
 
 const VacancyPage = () => {
   return (
     <Layout>
       <div className='flex flex-col items-center'>
-        <h1 className='text-[#06C167] text-6xl font-bold mb-4'>ВАКАНСИИ</h1>
+        <PageTitle title='ВАКАНСИИ' />
       </div>
     </Layout>
   );
