@@ -1,6 +1,8 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import Layout from "../components/Layout";
 import PageTitle from "../components/PageTitle";
+import WeatherAuto from "../components/WeatherAuto";
 import WeatherBlock from "../components/WeatherBlock";
 
 const WeatherPage = () => {
@@ -16,6 +18,7 @@ const WeatherPage = () => {
   };
   const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
   const [info, setInfo] = useState(state);
+  const [autoWeather, setAutoWeather] = useState(state);
   const [city, setCity] = useState("");
   const getWeather = (e) => {
     fetch(`http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}`)
@@ -37,6 +40,24 @@ const WeatherPage = () => {
         }
       });
   };
+
+  useEffect(() => {
+    fetch(`http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=auto:ip`)
+      .then((res) => res.json())
+      .then((data) => {
+        setAutoWeather({
+          temp: data.current.temp_c,
+          city: data.location.name,
+          country: data.location.country,
+          wind: data.current.wind_kph,
+          humidity: data.current.humidity,
+          pressure: data.current.pressure_mb,
+          clouds: data.current.cloud,
+          error: undefined,
+        });
+      });
+  }, [API_KEY]);
+
   return (
     <Layout>
       <div className='flex flex-col items-center'>
@@ -47,9 +68,19 @@ const WeatherPage = () => {
           24-часовой и 7-дневный прогноз.
         </p>
         <div className='w-3/5 flex flex-col'>
+          <WeatherAuto
+            city={autoWeather.city}
+            clouds={autoWeather.clouds}
+            temp={autoWeather.temp}
+            country={autoWeather.country}
+            humidity={autoWeather.humidity}
+            pressure={autoWeather.pressure}
+            wind={autoWeather.wind}
+          />
+          <h3 className='text-xl mb-2'>Поиск по населенным пунктам:</h3>
           <input
             type='text'
-            placeholder='Введите название населенного пункта'
+            placeholder='Введите название...'
             value={city}
             onChange={(e) => setCity(e.target.value)}
             onKeyPress={(e) => {
@@ -78,7 +109,7 @@ const WeatherPage = () => {
             />
           )}
           {!info.error && !info.city && (
-            <h2 className='text-center text-2xl py-4'>
+            <h2 className='text-center text-2xl pb-4'>
               Погода в текущей локации
             </h2>
           )}

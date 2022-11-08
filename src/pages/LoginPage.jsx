@@ -8,13 +8,13 @@ const LoginPage = () => {
         <p className='text-xl mb-2 text-neutral-700 '>Введите логин:</p>
         <input
           type='text'
-          placeholder='Логин'
+          placeholder='Логин...'
           className='mb-4 text-2xl focus:outline-none bg-white text-neutral-700 px-8 py-4 placeholder:text-neutral-700 rounded-xl focus:border-green-600 border-green-400 border-2 transition-all duration-300'
         />
         <p className='text-xl mb-2 text-neutral-700'>Введите пароль:</p>
         <input
           type='password'
-          placeholder='Пароль'
+          placeholder='Пароль...'
           className='text-2xl focus:outline-none bg-white text-neutral-700 px-8 py-4 placeholder:text-neutral-700 rounded-xl mb-8 focus:border-green-600 border-green-400 border-2 transition-all duration-300'
         />
         <div className='space-x-4'>
