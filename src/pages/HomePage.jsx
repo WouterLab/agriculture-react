@@ -1,5 +1,6 @@
-import AgropromDocs from '../components/AgropromDocs';
+import AgropromDocs from "../components/AgropromDocs";
 import CurrentPrices from "../components/CurrentPrices";
+import HomeImage from '../components/HomePage/HomeImage';
 import HomeNewsBlock from "../components/HomePage/NewsBlock";
 import Layout from "../components/Layout";
 import Vacancy from "../components/Vacancy";
@@ -14,12 +15,8 @@ const HomePage = () => {
           </h1>
           <HomeNewsBlock />
         </div>
-        <div className='w-full lg:w-1/2 flex justify-center'>
-          <img
-            className='h-[400px] md:h-[500px] xl:h-[600px]'
-            src='HomePage/home-image.png'
-            alt='plants'
-          />
+        <div className='w-full lg:w-1/2 flex justify-center relative'>
+          <HomeImage />
         </div>
       </div>
       <div className='flex flex-col items-center w-full mb-10'>
