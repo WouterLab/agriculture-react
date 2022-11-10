@@ -15,8 +15,7 @@ const HomeImage = () => {
       transform: `rotateY(${calcX}deg) rotateX(${calcY}deg)`,
       zIndex: 0,
       perspective: "100px",
-      WebkitTextStroke: "2px #5a9f0e",
-      filter: `drop-shadow(${calcX}px ${calcY}px 5px rgba(0,0,0,0.5))`
+      filter: `drop-shadow(${calcX-10}px ${calcY+5}px 10px rgba(0,0,0,0.5))`
     };
     setImageStyle(newStyleImg);
     setTextStyle(newStyleText);
@@ -37,7 +36,7 @@ const HomeImage = () => {
       />
       <p
         style={textStyle}
-        className='absolute text-7xl uppercase font-black text-white top-1/3'>
+        className='absolute text-7xl uppercase font-black text-[#79c504] top-1/3'>
         Agriculture
       </p>
     </>
