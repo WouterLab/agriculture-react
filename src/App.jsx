@@ -8,6 +8,7 @@ import NotFound from './pages/NotFound';
 import WeatherPage from './pages/WeatherPage';
 import ArticlesPage from './pages/ArticlesPage';
 import VacancyPage from './pages/VacancyPage';
+import CoopPage from './pages/CoopPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/articles' element={<ArticlesPage />} />
         <Route path='/weather' element={<WeatherPage />} />
         <Route path='/vacancy' element={<VacancyPage />} />
+        <Route path='/coop' element={<CoopPage />} />
         <Route path='/discussions' element={<DiscussionsPage />} />
         <Route path='/signup' element={<SignUpPage />} />
         <Route path='/login' element={<LoginPage />} />

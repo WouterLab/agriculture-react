@@ -45,6 +45,26 @@ const ArticlesPage = () => {
       title: "Заголовок статьи",
       img: "https://source.unsplash.com/random/200×200?farm",
     },
+    {
+      id: 9,
+      title: "Заголовок статьи",
+      img: "https://source.unsplash.com/random/200×200?agriculture",
+    },
+    {
+      id: 10,
+      title: "Заголовок статьи",
+      img: "https://source.unsplash.com/random/200×200?культура",
+    },
+    {
+      id: 11,
+      title: "Заголовок статьи",
+      img: "https://source.unsplash.com/random/200×200?ферма",
+    },
+    {
+      id: 12,
+      title: "Заголовок статьи",
+      img: "https://source.unsplash.com/random/200×200?птицы",
+    },
   ];
   return (
     <Layout>

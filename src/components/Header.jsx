@@ -8,7 +8,7 @@ const Header = () => {
   const currentPage = useLocation();
   const [isNavActive, setNavActive] = useState(false);
   return (
-    <header className='fixed h-20 top-0 bg-[#F3FCF7] w-full flex justify-between items-center'>
+    <header className='fixed h-20 top-0 bg-[#F3FCF7] w-full flex justify-between items-center z-50'>
       <Link to='/'>
         <img className='w-16 ml-12 cursor-pointer' src='logo.png' alt='logo' />
       </Link>
@@ -36,7 +36,7 @@ const Header = () => {
         <NavButton
           text='Вакансии'
           link='/vacancy'
-          active={currentPage.pathname === "/vacancy"}
+          active={currentPage.pathname === "/vacancy" || currentPage.pathname === "/coop"}
         />
         <NavButton
           text='Обсуждения'
@@ -57,7 +57,7 @@ const Header = () => {
             exit={{ x: 100, opacity: 0 }}
             transition={{ ease: "easeInOut", duration: 0.5 }}
             key='burger'
-            className='md:hidden flex flex-col absolute h-screen top-0 right-0 w-full justify-between py-8 items-center bg-[#F3FCF7]'>
+            className='md:hidden flex flex-col absolute h-screen top-0 right-0 w-full justify-between py-8 items-center bg-[#F3FCF7] z-50'>
             <XMarkIcon
               className='w-12 cursor-pointer'
               onClick={() => setNavActive(false)}
@@ -85,7 +85,7 @@ const Header = () => {
             <NavButton
               text='Вакансии'
               link='/vacancy'
-              active={currentPage.pathname === "/vacancy"}
+              active={currentPage.pathname === "/vacancy" || currentPage.pathname === "/coop"}
             />
             <NavButton
               text='Обсуждения'
