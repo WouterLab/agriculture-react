@@ -32,7 +32,7 @@ const ArticlesPage = () => {
     },
     {
       id: 6,
-      title: "Длиииии (мяу мяу мяу) ииинный заголовок статьи",
+      title: "Длиииииииинный заголовок статьи (мяу мяу мяу) ",
       img: "https://source.unsplash.com/random/200×200?chicken",
     },
     {
@@ -76,7 +76,7 @@ const ArticlesPage = () => {
           редакторы освещают свои вопросы, чтобы предоставить вам лучшую
           информацию об агрономии, технологиях, машинах, рынках и многом другом.
         </p>
-        <div className='flex w-5/6 flex-wrap justify-center gap-5 mb-8'>
+        <div className='flex w-5/6 flex-wrap justify-center gap-7 mb-8'>
           {articles.map((article) => (
             <ArticleBlock
               key={article.id}

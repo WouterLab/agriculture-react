@@ -2,7 +2,7 @@ import { BriefcaseIcon } from "@heroicons/react/24/outline";
 
 const CoopBlock = ({ job, desc }) => {
   return (
-    <div className='bg-gray-100 mb-4 px-2 py-4'>
+    <div className='bg-gray-100 mb-4 px-2 py-4 rounded-md'>
       <div className='flex items-center'>
         <BriefcaseIcon className='w-12' />
         <p className='font-bold text-2xl'>{job}</p>

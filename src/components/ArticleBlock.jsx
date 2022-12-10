@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { Parallax } from "react-parallax";
 
 const ArticleBlock = ({
   title,
@@ -15,16 +14,15 @@ const ArticleBlock = ({
 
   return (
     <div className='w-72'>
-      <Parallax bgImage={img} bgImageAlt='stiling'>
-        <div className='h-full w-full'></div>
-        {/* <img
-          src={img}
-          ref={imageRef}
-          alt='article-img'
-          className={`h-96 w-72 object-cover ${isLoading ? "block" : "hidden"}`}
-        /> */}
-      </Parallax>
-      <p className='text-xl line-clamp-2 ml-2'>{title}</p>
+      <img
+        ref={imageRef}
+        src={img}
+        alt='article-img'
+        className={`h-96 w-72 object-cover ${isLoading ? "block" : "hidden"}`}
+      />
+      <p className='text-xl text-black line-clamp-2 px-2 h-18 bg-white w-full border-b-2'>
+        {title}
+      </p>
       <div
         className={`h-96 w-72 skeleton ${!isLoading ? "block" : "hidden"}`}
       />

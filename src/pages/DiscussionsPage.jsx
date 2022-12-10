@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import PageTitle from "../components/PageTitle";
 import ThemeCard from "../components/ThemeCard";
+import Input from "../ui/Input";
 
 const DiscussionsPage = () => {
   const themes = [
@@ -28,12 +29,11 @@ const DiscussionsPage = () => {
           <div className='flex flex-col sm:flex-row mb-4 sm:mb-0 items-center justify-between w-5/6'>
             <div>
               <p className='text-lg'>Поиск по темам:</p>
-              <input
+              <Input
                 type='text'
+                placeholder='Тема...'
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className='text-lg focus:outline-none bg-white text-neutral-700 px-8 py-2 placeholder:text-neutral-700 rounded-xl focus:border-green-600 border-green-400 border-2 transition-all duration-300 mb-2'
-                placeholder='Тема...'
               />
             </div>
             <div className='space-x-2 text-2xl sm:text-lg'>
