@@ -4,11 +4,12 @@ import DiscussionsPage from "./pages/DiscussionsPage";
 import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import NotFound from './pages/NotFound';
-import WeatherPage from './pages/WeatherPage';
-import ArticlesPage from './pages/ArticlesPage';
-import VacancyPage from './pages/VacancyPage';
-import CoopPage from './pages/CoopPage';
+import NotFound from "./pages/NotFound";
+import WeatherPage from "./pages/WeatherPage";
+import ArticlesPage from "./pages/ArticlesPage";
+import VacancyPage from "./pages/VacancyPage";
+import CoopPage from "./pages/CoopPage";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
         <Route path='/discussions' element={<DiscussionsPage />} />
         <Route path='/signup' element={<SignUpPage />} />
         <Route path='/login' element={<LoginPage />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path='/privacy' element={<PrivacyPolicyPage />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </Router>
   );
