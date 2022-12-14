@@ -1,11 +1,15 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Footer from "./Footer";
 import Header from "./Header";
+import { LoginContext } from "../context";
+import { useContext } from "react";
 
 const Layout = ({ children }) => {
+  const login = useContext(LoginContext);
+
   return (
     <>
-      <Header />
+      <Header login={login} />
       <AnimatePresence>
         <motion.div
           initial={{ opacity: 0 }}

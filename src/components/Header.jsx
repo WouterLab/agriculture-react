@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Bars4Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Header = () => {
+const Header = ({ login }) => {
   const currentPage = useLocation();
   const [isNavActive, setNavActive] = useState(false);
   return (
@@ -36,18 +36,29 @@ const Header = () => {
         <NavButton
           text='Вакансии'
           link='/vacancy'
-          active={currentPage.pathname === "/vacancy" || currentPage.pathname === "/coop"}
+          active={
+            currentPage.pathname === "/vacancy" ||
+            currentPage.pathname === "/coop"
+          }
         />
         <NavButton
           text='Обсуждения'
           link='/discussions'
           active={currentPage.pathname === "/discussions"}
         />
-        <NavButton
-          text='Вход'
-          link='/login'
-          active={currentPage.pathname === "/login"}
-        />
+        {login ? (
+          <NavButton
+            text='Профиль'
+            link='/login'
+            active={currentPage.pathname === "/login"}
+          />
+        ) : (
+          <NavButton
+            text='Вход'
+            link='/login'
+            active={currentPage.pathname === "/login"}
+          />
+        )}
       </div>
       <AnimatePresence>
         {isNavActive ? (
@@ -85,18 +96,29 @@ const Header = () => {
             <NavButton
               text='Вакансии'
               link='/vacancy'
-              active={currentPage.pathname === "/vacancy" || currentPage.pathname === "/coop"}
+              active={
+                currentPage.pathname === "/vacancy" ||
+                currentPage.pathname === "/coop"
+              }
             />
             <NavButton
               text='Обсуждения'
               link='/discussions'
               active={currentPage.pathname === "/discussions"}
             />
-            <NavButton
-              text='Вход'
-              link='/login'
-              active={currentPage.pathname === "/login"}
-            />
+            {login ? (
+              <NavButton
+                text='Профиль'
+                link='/login'
+                active={currentPage.pathname === "/login"}
+              />
+            ) : (
+              <NavButton
+                text='Вход'
+                link='/login'
+                active={currentPage.pathname === "/login"}
+              />
+            )}
           </motion.div>
         ) : (
           <Bars4Icon
