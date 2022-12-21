@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 import PageTitle from "../components/PageTitle";
-import ProfileImg from "../assets/profile.jpg";
+import ProfileImg from "../assets/avatar.png";
 
 const ProfilePage = () => {
   return (

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import CityFilter from '../components/CityFilter';
 import CoopBlock from "../components/CoopBlock";
 import Layout from "../components/Layout";
 import PageTitle from "../components/PageTitle";
@@ -48,18 +49,7 @@ const CoopPage = () => {
             <Input type='text' placeholder='Поиск...' />
             <div className='border rounded-md px-2 py-4 w-4/5'>
               <p className='text-2xl font-bold'>Фильтры</p>
-              <div className='flex h-4 items-center space-x-4'>
-                <p>Москва</p>
-                <Input type='checkbox' style={{ marginBottom: 0 }} />
-              </div>
-              <div className='flex h-4 items-center space-x-4'>
-                <p>Санкт-Петербург</p>
-                <Input type='checkbox' style={{ marginBottom: 0 }} />
-              </div>
-              <div className='flex h-4 items-center space-x-4'>
-                <p>Краснодарский край</p>
-                <Input type='checkbox' style={{ marginBottom: 0 }} />
-              </div>
+              <CityFilter />
             </div>
           </aside>
           <div className='w-3/5'>
