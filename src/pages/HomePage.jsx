@@ -24,7 +24,7 @@ const HomePage = () => {
         </div>
       </div>
       <div className='flex flex-col items-center w-full mb-10'>
-        <h2 className='text-[#1D1D1F] font-bold text-2xl uppercase mb-4'>
+        <h2 className='text-[#1D1D1F] font-bold text-2xl uppercase mb-4 text-center'>
           Рыночные цены на товары
         </h2>
         <CurrentPrices />

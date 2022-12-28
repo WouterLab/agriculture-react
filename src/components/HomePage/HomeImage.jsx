@@ -37,7 +37,7 @@ const HomeImage = () => {
       />
       <p
         style={textStyle}
-        className='absolute text-5xl uppercase font-black text-white top-1/3'>
+        className='text-3xl absolute sm:text-5xl uppercase font-black text-white top-1/3'>
         Agriculture
       </p>
     </>
