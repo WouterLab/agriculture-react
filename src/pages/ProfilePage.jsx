@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 import PageTitle from "../components/PageTitle";
 import ProfileImg from "../assets/avatar.png";
 
-const ProfilePage = () => {
+const ProfilePage = ({ setIsLogged }) => {
   return (
     <Layout>
       <div className='flex flex-col items-center'>
@@ -21,6 +21,13 @@ const ProfilePage = () => {
           <p className='text-2xl font-semibold'>E-mail:</p>
           <p className='text-2xl'>danilpanov@mtuci.ru</p>
         </div>
+        <button
+          onClick={() => {
+            setIsLogged(false);
+          }}
+          className='rounded-2xl bg-green-400 text-2xl mb-4 px-14 py-3 text-white hover:text-black hover:bg-white transition-all duration-300 cursor-pointer hover:border-2 border-2 border-green-400'>
+          Выйти
+        </button>
       </div>
     </Layout>
   );

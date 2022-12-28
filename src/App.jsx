@@ -39,7 +39,7 @@ function App() {
           <Route path='/signup' element={<SignUpPage />} />
           <Route
             path='/login'
-            element={isLogged ? <ProfilePage /> : <LoginPage login={login} />}
+            element={isLogged ? <ProfilePage setIsLogged={setIsLogged} /> : <LoginPage login={login} />}
           />
           <Route path='/privacy' element={<PrivacyPolicyPage />} />
           <Route path='*' element={<NotFound />} />
