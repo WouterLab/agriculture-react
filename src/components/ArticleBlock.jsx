@@ -20,7 +20,7 @@ const ArticleBlock = ({
         alt='article-img'
         className={`h-96 w-72 object-cover ${isLoading ? "block" : "hidden"}`}
       />
-      <p className='text-xl text-black line-clamp-2 px-2 h-18 bg-white w-full mb-4 border-b-2'>
+      <p className='text-xl text-black line-clamp-3 px-2 h-18 bg-white w-full border-b-2 pb-1'>
         {title}
       </p>
       <div
