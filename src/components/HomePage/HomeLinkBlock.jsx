@@ -40,7 +40,7 @@ const HomeLinkBlock = () => {
     },
   ];
   return (
-    <div className='flex flex-wrap'>
+    <div className='flex flex-wrap items-center justify-center gap-5'>
       {data.map((service) => (
         <ServiceItem
           key={service.id}

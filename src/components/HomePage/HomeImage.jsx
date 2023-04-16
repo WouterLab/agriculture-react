@@ -13,7 +13,6 @@ const HomeImage = () => {
     };
     const newStyleText = {
       transform: `rotateY(${calcX}deg) rotateX(${calcY}deg)`,
-      zIndex: -1,
       filter: `drop-shadow(${calcX - 10}px ${
         calcY + 5
       }px 10px rgba(0,0,0,0.5))`,
@@ -28,19 +27,20 @@ const HomeImage = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
   return (
-    <>
+    <div className='relative'>
       <img
         style={imageStyle}
-        className='h-[400px] md:h-[500px] xl:h-[600px] rounded-lg'
-        src='HomePage/home-image.png'
+        className='w-full md:w-[600px] xl:w-[700px] rounded-lg'
+        src='https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2372&q=80'
         alt='plants'
       />
       <p
         style={textStyle}
-        className='text-3xl absolute sm:text-5xl uppercase font-black text-white top-1/3'>
+        className='text-3xl absolute sm:text-5xl md:left-[30px] uppercase font-black text-white top-1/3 left-[170px] z-1'
+      >
         Agriculture
       </p>
-    </>
+    </div>
   );
 };
 

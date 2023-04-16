@@ -14,14 +14,12 @@ const HomePage = () => {
             Агрокультура
           </h1>
           <h2 className='font-bold text-lg md:text-xl lg:text-2xl xl:text-3xl text-[#323234] mb-9'>
-            Информационная система агропромышленного комплекса
-            Министерства сельского хозяйства и продовольствия
+            Информационная система агропромышленного комплекса Министерства
+            сельского хозяйства и продовольствия
           </h2>
-          <HomeLinkBlock />
-        </div>
-        <div className='w-full lg:w-1/2 flex justify-center relative'>
           <HomeImage />
         </div>
+        <HomeLinkBlock />
       </div>
       <div className='flex flex-col items-center w-full mb-10'>
         <h2 className='text-[#1D1D1F] font-bold text-2xl uppercase mb-4 text-center'>
