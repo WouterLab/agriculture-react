@@ -30,13 +30,13 @@ const HomeImage = () => {
     <div className='relative'>
       <img
         style={imageStyle}
-        className='w-full md:w-[600px] xl:w-[700px] rounded-lg'
+        className='w-full rounded-lg max-w-[600px]'
         src='https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2372&q=80'
         alt='plants'
       />
       <p
         style={textStyle}
-        className='text-3xl absolute sm:text-5xl md:left-[30px] uppercase font-black text-white top-1/3 left-[170px] z-1'
+        className='absolute top-1/3 w-full text-5xl inline-block uppercase font-black text-center text-white z-1'
       >
         Agriculture
       </p>

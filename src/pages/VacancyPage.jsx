@@ -5,7 +5,7 @@ import Layout from "../components/Layout";
 import PageTitle from "../components/PageTitle";
 import SalaryFilter from "../components/SalaryFilter";
 import ScheduleFilter from "../components/ScheduleFilter";
-import VacancyBlock from '../components/VacancyBlock';
+import VacancyBlock from "../components/VacancyBlock";
 import Input from "../ui/Input";
 
 const VacancyPage = () => {
@@ -42,8 +42,8 @@ const VacancyPage = () => {
 
   return (
     <Layout>
-      <div className='flex flex-col items-center'>
-        <div className='flex items-center space-x-4 mb-8'>
+      <div className='flex flex-col items-center px-16'>
+        <div className='flex flex-col md:flex-row items-center space-x-4 mb-8'>
           <PageTitle title='ВАКАНСИИ' />
           <Link to='/coop'>
             <h2 className='text-4xl font-bold text-neutral-500 underline'>
@@ -51,10 +51,10 @@ const VacancyPage = () => {
             </h2>
           </Link>
         </div>
-        <div className='flex justify-center w-full'>
-          <aside className='w-1/5'>
+        <div className='flex flex-col md:flex-row justify-center w-full gap-10'>
+          <aside>
             <Input type='text' placeholder='Поиск...' />
-            <div className='border rounded-md px-2 py-4 w-4/5'>
+            <div className='border rounded-md px-2 py-4 w-full md:w-max mb-10'>
               <p className='text-2xl font-bold'>Фильтры</p>
               <CityFilter />
               <SalaryFilter
@@ -67,9 +67,13 @@ const VacancyPage = () => {
               />
             </div>
           </aside>
-          <div className='w-3/5'>
+          <div className='w-full md:w-3/5'>
             {vacancies.map((person) => (
-              <VacancyBlock key={person.id} job={person.job} desc={person.desc} />
+              <VacancyBlock
+                key={person.id}
+                job={person.job}
+                desc={person.desc}
+              />
             ))}
           </div>
         </div>

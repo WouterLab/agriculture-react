@@ -12,7 +12,12 @@ import CoopPage from "./pages/CoopPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import React, { useState } from "react";
 import ProfilePage from "./pages/ProfilePage";
-import { LoginContext } from './context';
+import { LoginContext } from "./context";
+import CurrentNewsPage from "./pages/CurrentNewsPage";
+import CurrentArticlePage from "./pages/CurrentArticlePage";
+import CurrentVacancyPage from "./pages/CurrentVacancyPage";
+import CurrentCoopPage from "./pages/CurrentCoopPage";
+import CurrentDiscussionPage from "./pages/CurrentDiscussionPage";
 
 function App() {
   const [isLogged, setIsLogged] = useState(false);
@@ -31,15 +36,29 @@ function App() {
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/news' element={<NewsPage />} />
+          <Route path='/news/:newsId' element={<CurrentNewsPage />} />
           <Route path='/articles' element={<ArticlesPage />} />
+          <Route path='/articles/:articleId' element={<CurrentArticlePage />} />
           <Route path='/weather' element={<WeatherPage />} />
           <Route path='/vacancy' element={<VacancyPage />} />
+          <Route path='/vacancy/:vacancyId' element={<CurrentVacancyPage />} />
           <Route path='/coop' element={<CoopPage />} />
+          <Route path='/coop/:coopId' element={<CurrentCoopPage />} />
           <Route path='/discussions' element={<DiscussionsPage />} />
+          <Route
+            path='/discussions/:discussionId'
+            element={<CurrentDiscussionPage />}
+          />
           <Route path='/signup' element={<SignUpPage />} />
           <Route
             path='/login'
-            element={isLogged ? <ProfilePage setIsLogged={setIsLogged} /> : <LoginPage login={login} />}
+            element={
+              isLogged ? (
+                <ProfilePage setIsLogged={setIsLogged} />
+              ) : (
+                <LoginPage login={login} />
+              )
+            }
           />
           <Route path='/privacy' element={<PrivacyPolicyPage />} />
           <Route path='*' element={<NotFound />} />

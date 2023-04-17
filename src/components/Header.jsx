@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Bars4Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { motion, AnimatePresence } from "framer-motion";
+import LogoIcon from "../assets/logo.png";
 
 const Header = ({ login }) => {
   const currentPage = useLocation();
@@ -10,7 +11,7 @@ const Header = ({ login }) => {
   return (
     <header className='fixed h-20 top-0 bg-[#F3FCF7] w-full flex justify-between items-center z-50'>
       <Link to='/'>
-        <img className='w-16 ml-12 cursor-pointer' src='logo.png' alt='logo' />
+        <img className='w-16 ml-12 cursor-pointer' src={LogoIcon} alt='logo' />
       </Link>
       <div className='space-x-8 mr-12 hidden md:flex'>
         <NavButton
@@ -68,7 +69,8 @@ const Header = ({ login }) => {
             exit={{ x: 100, opacity: 0 }}
             transition={{ ease: "easeInOut", duration: 0.5 }}
             key='burger'
-            className='md:hidden flex flex-col absolute h-screen top-0 right-0 w-full justify-between py-8 items-center bg-[#F3FCF7] z-50'>
+            className='md:hidden flex flex-col absolute h-screen top-0 right-0 w-full justify-between py-8 items-center bg-[#F3FCF7] z-50'
+          >
             <XMarkIcon
               className='w-12 cursor-pointer'
               onClick={() => setNavActive(false)}
