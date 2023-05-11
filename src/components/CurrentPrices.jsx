@@ -76,36 +76,41 @@ const CurrentPrices = () => {
 
       <table className='hidden lg:table'>
         <tbody>
-          <tr>
-            <th>
+          <tr className=''>
+            <th className='bg-[#F3FCF7] text-black border'>
               <ChartBarIcon className='w-5 inline-block mr-2 mb-1 text-[#06C167]' />
               Товар
             </th>
-            <th>Начальная</th>
-            <th>Последняя</th>
-            <th>Изменение</th>
-            <th>Самая высокая</th>
-            <th>Самая низкая</th>
-            <th>Дата продажи</th>
+            <th className='bg-[#F3FCF7] text-black border'>Начальная</th>
+            <th className='bg-[#F3FCF7] text-black border'>Последняя</th>
+            <th className='bg-[#F3FCF7] text-black border'>Изменение</th>
+            <th className='bg-[#F3FCF7] text-black border'>Самая высокая</th>
+            <th className='bg-[#F3FCF7] text-black border'>Самая низкая</th>
+            <th className='bg-[#F3FCF7] text-black border'>Дата продажи</th>
           </tr>
           {products.map((product) => (
             <tr key={product.id}>
-              <td>{product.title}</td>
-              <td>{product.firstPrice}</td>
-              <td>{product.lastPrice}</td>
+              <td className='bg-neutral-50 border border-r-0'>
+                {product.title}
+              </td>
+              <td className='bg-neutral-50 border-y'>{product.firstPrice}</td>
+              <td className='bg-neutral-50 border-y'>{product.lastPrice}</td>
               <td
                 className={`${
                   product.changePrice > 0
-                    ? "bg-green-200"
+                    ? "bg-green-200 border-y"
                     : product.changePrice < 0
-                    ? "bg-red-400"
+                    ? "bg-red-300 border-y"
                     : null
-                }`}>
+                }`}
+              >
                 {product.changePrice}%
               </td>
-              <td>{product.highestPrice}</td>
-              <td>{product.lowestPrice}</td>
-              <td>{product.sellDate}</td>
+              <td className='bg-neutral-50 border-y'>{product.highestPrice}</td>
+              <td className='bg-neutral-50 border-y'>{product.lowestPrice}</td>
+              <td className='bg-neutral-50 border border-l-0'>
+                {product.sellDate}
+              </td>
             </tr>
           ))}
         </tbody>
