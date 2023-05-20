@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Layout } from "../components/Layout";
 import { UserAnswer } from "../components/UserAnswer";
 import { UserQuestion } from "../components/UserQuestion";
 import { Button } from "../ui/Button";
 import { Textarea } from "../ui/Textarea";
+import { LoginContext } from "../context";
+import { useNavigate } from "react-router-dom";
 
 const answers = [
   {
@@ -53,6 +55,8 @@ const answers = [
 const CurrentDiscussionPage = () => {
   const [currentAnswers, setCurrentAnswers] = useState(answers);
   const [userAnswer, setUserAnswer] = useState("");
+  const isLogged = useContext(LoginContext);
+  const navigate = useNavigate();
 
   const handleClick = () => {
     const currentDate = new Date();
@@ -105,12 +109,16 @@ const CurrentDiscussionPage = () => {
           <p className='text-3xl'>Тема:</p>
           <UserQuestion />
           <Button
-            onClick={() =>
-              window.scrollTo({
-                top: document.body.scrollHeight,
-                behavior: "smooth",
-              })
-            }
+            onClick={() => {
+              if (!isLogged) {
+                navigate("/login");
+              } else {
+                window.scrollTo({
+                  top: document.body.scrollHeight,
+                  behavior: "smooth",
+                });
+              }
+            }}
           >
             Ответить
           </Button>
@@ -135,7 +143,11 @@ const CurrentDiscussionPage = () => {
               return;
             }}
           />
-          <Button onClick={handleClick}>Отправить</Button>
+          {isLogged ? (
+            <Button onClick={handleClick}>Отправить</Button>
+          ) : (
+            <p>Авторизуйтесь в аккаунт, чтобы ответить</p>
+          )}
         </div>
       </div>
     </Layout>
