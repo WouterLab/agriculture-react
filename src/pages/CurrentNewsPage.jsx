@@ -1,6 +1,11 @@
-import Layout from "../components/Layout";
+import { Layout } from "../components/Layout";
+import NewsImage from "../assets/agriculture-news.jpeg";
+import { Button } from "../ui/Button";
+import { useNavigate } from "react-router-dom";
 
 const CurrentNewsPage = () => {
+  const navigate = useNavigate();
+
   return (
     <Layout>
       <div className='flex flex-col items-center w-full md:w-2/3 mx-auto px-16'>
@@ -10,11 +15,11 @@ const CurrentNewsPage = () => {
         </p>
         <div>
           <img
-            src='https://source.unsplash.com/random/200×200?agriculture'
+            src={NewsImage}
             alt='agriculture-news'
-            className='w-full max-w-[700px] max-h-[600px] object-contain mb-4 float-right ml-10 mt-4'
+            className='w-full max-w-[700px] max-h-[600px] object-contain mb-4 float-right ml-10 mt-4 rounded-lg'
           />
-          <p className='md:w-3/5 w-full text-xl mb-4 text-left'>
+          <p className='w-full text-xl mb-4 text-left'>
             Экспорт сельскохозяйственной продукции США вырос до рекордных
             $196,4 млрд в финансовом году, закончившемся 30 сентября, благодаря
             значительному увеличению продаж в большинстве категорий, согласно
@@ -42,10 +47,12 @@ const CurrentNewsPage = () => {
             подсластителей и тропических продуктов, таких как кофе и какао.
           </p>
         </div>
-        <div className='w-3/5 mb-8'></div>
+        <Button className='mb-8' onClick={() => navigate("/news")}>
+          Назад
+        </Button>
       </div>
     </Layout>
   );
 };
 
-export default CurrentNewsPage;
+export { CurrentNewsPage };

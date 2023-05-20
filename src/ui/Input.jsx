@@ -8,4 +8,4 @@ const Input = (props) => {
   );
 };
 
-export default Input;
+export { Input };

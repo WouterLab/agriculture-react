@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ArticleBlock = ({
+  id,
   title,
   img = "https://source.unsplash.com/random/200×200",
 }) => {
@@ -16,16 +17,22 @@ const ArticleBlock = ({
 
   return (
     <div
-      className='w-72 cursor-pointer'
-      onClick={() => navigate("/articles/1")}
+      className='w-72 cursor-pointer bg-neutral-50 rounded-lg overflow-hidden'
+      onClick={() => {
+        navigate(`/articles/${id}`);
+        localStorage.setItem("article-title", title);
+        localStorage.setItem("article-image", img);
+      }}
     >
       <img
         ref={imageRef}
         src={img}
         alt='article-img'
-        className={`h-96 w-72 object-cover ${isLoading ? "block" : "hidden"}`}
+        className={`h-96 w-72 mb-4 object-cover ${
+          isLoading ? "block" : "hidden"
+        }`}
       />
-      <p className='text-xl text-black line-clamp-3 px-2 h-18 bg-white w-full pb-1'>
+      <p className='text-xl text-black line-clamp-3 px-2 h-18 w-full pb-1 mb-4'>
         {title}
       </p>
       <div
@@ -35,4 +42,4 @@ const ArticleBlock = ({
   );
 };
 
-export default ArticleBlock;
+export { ArticleBlock };

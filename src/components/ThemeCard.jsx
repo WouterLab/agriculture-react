@@ -6,4 +6,4 @@ const ThemeCard = ({ title }) => {
   );
 };
 
-export default ThemeCard;
+export { ThemeCard };

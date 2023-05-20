@@ -1,23 +1,23 @@
-import HomePage from "./pages/HomePage";
-import NewsPage from "./pages/NewsPage";
-import DiscussionsPage from "./pages/DiscussionsPage";
-import SignUpPage from "./pages/SignUpPage";
-import LoginPage from "./pages/LoginPage";
+import { HomePage } from "./pages/HomePage";
+import { NewsPage } from "./pages/NewsPage";
+import { DiscussionsPage } from "./pages/DiscussionsPage";
+import { SignUpPage } from "./pages/SignUpPage";
+import { LoginPage } from "./pages/LoginPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import NotFound from "./pages/NotFound";
-import WeatherPage from "./pages/WeatherPage";
-import ArticlesPage from "./pages/ArticlesPage";
-import VacancyPage from "./pages/VacancyPage";
-import CoopPage from "./pages/CoopPage";
-import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import { NotFound } from "./pages/NotFound";
+import { WeatherPage } from "./pages/WeatherPage";
+import { ArticlesPage } from "./pages/ArticlesPage";
+import { VacancyPage } from "./pages/VacancyPage";
+import { CoopPage } from "./pages/CoopPage";
+import { PrivacyPolicyPage } from "./pages/PrivacyPolicyPage";
 import React, { useState } from "react";
-import ProfilePage from "./pages/ProfilePage";
+import { ProfilePage } from "./pages/ProfilePage";
 import { LoginContext } from "./context";
-import CurrentNewsPage from "./pages/CurrentNewsPage";
-import CurrentArticlePage from "./pages/CurrentArticlePage";
-import CurrentVacancyPage from "./pages/CurrentVacancyPage";
-import CurrentCoopPage from "./pages/CurrentCoopPage";
-import CurrentDiscussionPage from "./pages/CurrentDiscussionPage";
+import { CurrentNewsPage } from "./pages/CurrentNewsPage";
+import { CurrentArticlePage } from "./pages/CurrentArticlePage";
+import { CurrentVacancyPage } from "./pages/CurrentVacancyPage";
+import { CurrentCoopPage } from "./pages/CurrentCoopPage";
+import { CurrentDiscussionPage } from "./pages/CurrentDiscussionPage";
 
 function App() {
   const [isLogged, setIsLogged] = useState(false);
@@ -44,9 +44,13 @@ function App() {
           <Route path='/vacancy/:vacancyId' element={<CurrentVacancyPage />} />
           <Route path='/coop' element={<CoopPage />} />
           <Route path='/coop/:coopId' element={<CurrentCoopPage />} />
-          <Route path='/discussions' element={<DiscussionsPage />} />
+          <Route path='/discussions/1' element={<DiscussionsPage />} />
           <Route
-            path='/discussions/:discussionId'
+            path='/discussions/:discussionsPage'
+            element={<DiscussionsPage />}
+          />
+          <Route
+            path='/discussion/:discussionId'
             element={<CurrentDiscussionPage />}
           />
           <Route path='/signup' element={<SignUpPage />} />

@@ -4,7 +4,7 @@ const NewsCard = ({ title, desc, src }) => {
   const navigate = useNavigate();
   return (
     <div
-      className='flex flex-col sm:flex-row pb-4 mt-4 border-b border-black'
+      className='flex flex-col lg:flex-row pb-4 mt-4 border-b border-black'
       onClick={() => navigate("/news/1")}
     >
       <div className='pr-8'>
@@ -22,4 +22,4 @@ const NewsCard = ({ title, desc, src }) => {
   );
 };
 
-export default NewsCard;
+export { NewsCard };

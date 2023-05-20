@@ -1,9 +1,9 @@
-import AgropromDocs from "../components/AgropromDocs";
-import CurrentPrices from "../components/CurrentPrices";
-import HomeImage from "../components/HomePage/HomeImage";
-import HomeLinkBlock from "../components/HomePage/HomeLinkBlock";
-import Layout from "../components/Layout";
-import Vacancy from "../components/Vacancy";
+import { AgropromDocs } from "../components/AgropromDocs";
+import { CurrentPrices } from "../components/CurrentPrices";
+import { HomeImage } from "../components/HomePage/HomeImage";
+import { HomeLinkBlock } from "../components/HomePage/HomeLinkBlock";
+import { Layout } from "../components/Layout";
+import { Vacancy } from "../components/Vacancy";
 
 const HomePage = () => {
   return (
@@ -43,4 +43,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export { HomePage };

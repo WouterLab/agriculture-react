@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import Layout from "../components/Layout";
-import PageTitle from "../components/PageTitle";
-import WeatherAuto from "../components/WeatherAuto";
-import WeatherBlock from "../components/WeatherBlock";
+import { Layout } from "../components/Layout";
+import { PageTitle } from "../components/PageTitle";
+import { WeatherAuto } from "../components/WeatherAuto";
+import { WeatherBlock } from "../components/WeatherBlock";
+import { Button } from "../ui/Button";
 
 const WeatherPage = () => {
   const state = {
@@ -62,7 +63,7 @@ const WeatherPage = () => {
     <Layout>
       <div className='flex flex-col items-center'>
         <PageTitle title='ПОГОДА' />
-        <p className='w-3/5 text-center text-xl mb-4'>
+        <p className='w-3/5 text-center text-xl mb-12'>
           Будьте в курсе текущих погодных условий для вашей фермы, включая
           температуру, скорость ветра и видимость. Эта страница также содержит
           24-часовой и 7-дневный прогноз.
@@ -91,11 +92,9 @@ const WeatherPage = () => {
             }}
             className='text-2xl focus:outline-none bg-white text-neutral-700 px-8 py-4 placeholder:text-neutral-700 rounded-xl mb-8 focus:border-green-600 border-green-400 border-2 transition-all duration-300'
           />
-          <button
-            onClick={getWeather}
-            className='rounded-2xl bg-green-400 text-2xl px-14 py-3 text-white hover:text-black hover:bg-white transition-all duration-300 cursor-pointer hover:border-2 border-2 border-green-400 mb-8'>
+          <Button className='mb-8' onClick={getWeather}>
             Подтвердить
-          </button>
+          </Button>
           {info.error && <h2>{info.error}</h2>}
           {!info.error && info.city && (
             <WeatherBlock
@@ -119,4 +118,4 @@ const WeatherPage = () => {
   );
 };
 
-export default WeatherPage;
+export { WeatherPage };

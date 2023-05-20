@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import VacancyItem from "./VacancyItem";
+import { VacancyItem } from "./VacancyItem";
 
 const Vacancy = () => {
   const [vacancies, setVacancies] = useState([]);
@@ -34,4 +34,4 @@ const Vacancy = () => {
   );
 };
 
-export default Vacancy;
+export { Vacancy };

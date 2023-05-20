@@ -1,4 +1,4 @@
-import CityCheckbox from "./CityCheckbox";
+import { CityCheckbox } from "./CityCheckbox";
 
 const CityFilter = () => {
   return (
@@ -15,4 +15,4 @@ const CityFilter = () => {
   );
 };
 
-export default CityFilter;
+export { CityFilter };

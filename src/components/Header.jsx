@@ -1,4 +1,4 @@
-import NavButton from "../ui/NavButton";
+import { NavButton } from "../ui/NavButton";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Bars4Icon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -44,7 +44,7 @@ const Header = ({ login }) => {
         />
         <NavButton
           text='Обсуждения'
-          link='/discussions'
+          link='/discussions/1'
           active={currentPage.pathname === "/discussions"}
         />
         {login ? (
@@ -133,4 +133,4 @@ const Header = ({ login }) => {
   );
 };
 
-export default Header;
+export { Header };

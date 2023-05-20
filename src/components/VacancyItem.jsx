@@ -11,4 +11,4 @@ const VacancyItem = ({ title }) => {
   );
 };
 
-export default VacancyItem;
+export { VacancyItem };

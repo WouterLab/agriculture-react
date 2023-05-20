@@ -13,12 +13,12 @@ const WeatherBlock = ({
         Населенный пункт: {city}, {country}
       </p>
       <p>Температура: {temp}°C</p>
-      <p>{clouds > 50 ? 'Облачно' : 'Солнечно'}</p>
-      <p>Ветер: {Math.round(wind * 1000 / 3600)} м/c</p>
+      <p>{clouds > 50 ? "Облачно" : "Солнечно"}</p>
+      <p>Ветер: {Math.round((wind * 1000) / 3600)} м/c</p>
       <p>Влажность: {humidity}%</p>
       <p>Давление: {pressure} рт.ст.</p>
     </div>
   );
 };
 
-export default WeatherBlock;
+export { WeatherBlock };

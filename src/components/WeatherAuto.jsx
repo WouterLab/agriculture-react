@@ -21,4 +21,4 @@ const WeatherAuto = ({
   );
 };
 
-export default WeatherAuto;
+export { WeatherAuto };

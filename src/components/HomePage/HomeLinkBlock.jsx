@@ -1,4 +1,4 @@
-import ServiceItem from "./ServiceItem";
+import { ServiceItem } from "./ServiceItem";
 
 const HomeLinkBlock = () => {
   const data = [
@@ -53,4 +53,4 @@ const HomeLinkBlock = () => {
   );
 };
 
-export default HomeLinkBlock;
+export { HomeLinkBlock };

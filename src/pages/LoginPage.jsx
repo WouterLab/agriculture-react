@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Layout from "../components/Layout";
+import { Layout } from "../components/Layout";
 
 const LoginPage = ({ login }) => {
   const [loginData, setLoginData] = useState({
@@ -36,7 +36,8 @@ const LoginPage = ({ login }) => {
             onClick={() => {
               login(loginData);
             }}
-            className='rounded-2xl bg-green-400 text-2xl px-14 py-3 text-white hover:text-black hover:bg-white transition-all duration-300 cursor-pointer hover:border-2 border-2 border-green-400'>
+            className='rounded-2xl bg-green-400 text-2xl px-14 py-3 text-white hover:text-black hover:bg-white transition-all duration-300 cursor-pointer hover:border-2 border-2 border-green-400'
+          >
             Войти
           </button>
           <Link to={"/signup"}>
@@ -50,4 +51,4 @@ const LoginPage = ({ login }) => {
   );
 };
 
-export default LoginPage;
+export { LoginPage };

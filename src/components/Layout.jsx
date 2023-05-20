@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
-import Footer from "./Footer";
-import Header from "./Header";
+import { Footer } from "./Footer";
+import { Header } from "./Header";
 import { LoginContext } from "../context";
 import { useContext } from "react";
 
@@ -15,7 +15,8 @@ const Layout = ({ children }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className='mt-32'>
+          className='mt-32'
+        >
           {children}
         </motion.div>
       </AnimatePresence>
@@ -24,4 +25,4 @@ const Layout = ({ children }) => {
   );
 };
 
-export default Layout;
+export { Layout };

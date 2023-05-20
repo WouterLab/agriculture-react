@@ -36,7 +36,7 @@ const HomeImage = () => {
       />
       <p
         style={textStyle}
-        className='absolute top-1/3 w-full text-5xl inline-block uppercase font-black text-center text-white z-1'
+        className='absolute top-1/3 w-full text-2xl sm:text-5xl inline-block uppercase font-black text-center text-white z-1'
       >
         Agriculture
       </p>
@@ -44,4 +44,4 @@ const HomeImage = () => {
   );
 };
 
-export default HomeImage;
+export { HomeImage };

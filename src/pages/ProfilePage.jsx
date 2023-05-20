@@ -1,5 +1,5 @@
-import Layout from "../components/Layout";
-import PageTitle from "../components/PageTitle";
+import { Layout } from "../components/Layout";
+import { PageTitle } from "../components/PageTitle";
 import ProfileImg from "../assets/avatar.png";
 
 const ProfilePage = ({ setIsLogged }) => {
@@ -25,7 +25,8 @@ const ProfilePage = ({ setIsLogged }) => {
           onClick={() => {
             setIsLogged(false);
           }}
-          className='rounded-2xl bg-green-400 text-2xl mb-4 px-14 py-3 text-white hover:text-black hover:bg-white transition-all duration-300 cursor-pointer hover:border-2 border-2 border-green-400'>
+          className='rounded-2xl bg-green-400 text-2xl mb-4 px-14 py-3 text-white hover:text-black hover:bg-white transition-all duration-300 cursor-pointer hover:border-2 border-2 border-green-400'
+        >
           Выйти
         </button>
       </div>
@@ -33,4 +34,4 @@ const ProfilePage = ({ setIsLogged }) => {
   );
 };
 
-export default ProfilePage;
+export { ProfilePage };

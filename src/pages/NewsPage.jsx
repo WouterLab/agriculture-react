@@ -1,6 +1,7 @@
-import Layout from "../components/Layout";
-import NewsCard from "../components/NewsPage/NewsCard";
-import PageTitle from "../components/PageTitle";
+import { Layout } from "../components/Layout";
+import { NewsCard } from "../components/NewsPage/NewsCard";
+import { PageTitle } from "../components/PageTitle";
+import { Button } from "../ui/Button";
 
 const NewsPage = () => {
   const news = [
@@ -43,7 +44,7 @@ const NewsPage = () => {
     <Layout>
       <div className='flex flex-col items-center'>
         <PageTitle title='НОВОСТИ' />
-        <p className='w-3/5 text-center text-xl mb-4'>
+        <p className='w-3/5 text-center text-xl mb-12'>
           В этом разделе вы найдете последние новости в области сельского
           хозяйства, в том числе новости о сельскохозяйственной политике,
           бизнесе, машинах и технологиях. В этом разделе также освещаются
@@ -61,9 +62,10 @@ const NewsPage = () => {
             />
           ))}
         </div>
+        <Button className='mb-10'>Загрузить ещё</Button>
       </div>
     </Layout>
   );
 };
 
-export default NewsPage;
+export { NewsPage };

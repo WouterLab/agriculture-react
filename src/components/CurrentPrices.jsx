@@ -1,6 +1,6 @@
 import { ChartBarIcon } from "@heroicons/react/24/outline";
 import { useEffect, useState } from "react";
-import ProductBlock from "./ProductBlock";
+import { ProductBlock } from "./ProductBlock";
 
 const CurrentPrices = () => {
   const [products, setProducts] = useState([]);
@@ -119,4 +119,4 @@ const CurrentPrices = () => {
   );
 };
 
-export default CurrentPrices;
+export { CurrentPrices };

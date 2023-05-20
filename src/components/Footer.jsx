@@ -7,11 +7,12 @@ const Footer = () => {
       <p>Copyright © 2022 Agroprom.ru</p>
       <p
         className='underline cursor-pointer'
-        onClick={() => navigate("/privacy")}>
+        onClick={() => navigate("/privacy")}
+      >
         Политика конфиденциальности
       </p>
     </footer>
   );
 };
 
-export default Footer;
+export { Footer };

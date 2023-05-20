@@ -36,4 +36,4 @@ const AgropromDocs = () => {
   );
 };
 
-export default AgropromDocs;
+export { AgropromDocs };
