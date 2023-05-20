@@ -1,10 +1,11 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useState } from "react";
 import { Layout } from "../components/Layout";
 import { PageTitle } from "../components/PageTitle";
 import { WeatherAuto } from "../components/WeatherAuto";
 import { WeatherBlock } from "../components/WeatherBlock";
 import { Button } from "../ui/Button";
+import { LoginContext } from "../context";
 
 const WeatherPage = () => {
   const state = {
@@ -22,38 +23,49 @@ const WeatherPage = () => {
   const [autoWeather, setAutoWeather] = useState(state);
   const [city, setCity] = useState("");
   const getWeather = (e) => {
-    fetch(`http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}`)
+    fetch(
+      `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY}`,
+    )
       .then((res) => res.json())
       .then((data) => {
-        if (data.location) {
-          setInfo({
-            temp: data.current.temp_c,
-            city: data.location.name,
-            country: data.location.country,
-            wind: data.current.wind_kph,
-            humidity: data.current.humidity,
-            pressure: data.current.pressure_mb,
-            clouds: data.current.cloud,
-            error: undefined,
+        fetch(
+          `https://api.openweathermap.org/data/2.5/weather?lat=${data[0].lat}&lon=${data[0].lon}&units=metric&lang=ru&appid=${API_KEY}`,
+        )
+          .then((weather) => weather.json())
+          .then((data) => {
+            if (data.name) {
+              setInfo({
+                temp: data.main.temp,
+                city: data.name,
+                country: data.sys.country,
+                wind: data.wind.speed,
+                humidity: data.main.humidity,
+                pressure: data.main.pressure,
+                clouds: data.weather[0].description,
+                error: undefined,
+              });
+            } else {
+              setInfo({ ...info, error: "enter valid city" });
+            }
           });
-        } else {
-          setInfo({ ...info, error: "enter valid city" });
-        }
       });
   };
+  const isLogged = useContext(LoginContext);
 
   useEffect(() => {
-    fetch(`http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=auto:ip`)
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=55.75&lon=37.61&units=metric&lang=ru&appid=${API_KEY}`,
+    )
       .then((res) => res.json())
       .then((data) => {
         setAutoWeather({
-          temp: data.current.temp_c,
-          city: data.location.name,
-          country: data.location.country,
-          wind: data.current.wind_kph,
-          humidity: data.current.humidity,
-          pressure: data.current.pressure_mb,
-          clouds: data.current.cloud,
+          temp: data.main.temp,
+          city: data.name,
+          country: data.sys.country,
+          wind: data.wind.speed,
+          humidity: data.main.humidity,
+          pressure: data.main.pressure,
+          clouds: data.weather[0].description,
           error: undefined,
         });
       });
@@ -78,38 +90,43 @@ const WeatherPage = () => {
             pressure={autoWeather.pressure}
             wind={autoWeather.wind}
           />
-          <h3 className='text-xl mb-2'>Поиск по населенным пунктам:</h3>
-          <input
-            type='text'
-            placeholder='Введите название...'
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-            onKeyPress={(e) => {
-              if (e.key === "Enter") {
-                getWeather();
-              }
-              return;
-            }}
-            className='text-2xl focus:outline-none bg-white text-neutral-700 px-8 py-4 placeholder:text-neutral-700 rounded-xl mb-8 focus:border-green-600 border-green-400 border-2 transition-all duration-300'
-          />
-          <Button className='mb-8' onClick={getWeather}>
-            Подтвердить
-          </Button>
-          {info.error && <h2>{info.error}</h2>}
-          {!info.error && info.city && (
-            <WeatherBlock
-              city={info.city}
-              clouds={info.clouds}
-              temp={info.temp}
-              country={info.country}
-              humidity={info.humidity}
-              pressure={info.pressure}
-              wind={info.wind}
-            />
+          {isLogged && (
+            <>
+              <h3 className='text-xl mb-2'>Поиск по населенным пунктам:</h3>
+              <input
+                type='text'
+                placeholder='Введите название...'
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+                onKeyPress={(e) => {
+                  if (e.key === "Enter") {
+                    getWeather();
+                  }
+                  return;
+                }}
+                className='text-2xl focus:outline-none bg-white text-neutral-700 px-8 py-4 placeholder:text-neutral-700 rounded-xl mb-8 focus:border-green-600 border-green-400 border-2 transition-all duration-300'
+              />
+              <Button onClick={getWeather}>Подтвердить</Button>
+
+              {info.error && <h2>{info.error}</h2>}
+              {!info.error && info.city && (
+                <WeatherBlock
+                  city={info.city}
+                  clouds={info.clouds}
+                  temp={info.temp}
+                  country={info.country}
+                  humidity={info.humidity}
+                  pressure={Math.round(info.pressure * 0.750062)}
+                  wind={info.wind}
+                />
+              )}
+            </>
           )}
-          {!info.error && !info.city && (
-            <h2 className='text-center text-2xl pb-4'>
-              Погода в текущей локации
+          {!isLogged && (
+            <h2 className='text-center text-2xl mb-8'>
+              Выполните регистрацию или авторизуйтесь, чтобы узнать погодные
+              условия
+              <br />в других населенных пунктах
             </h2>
           )}
         </div>

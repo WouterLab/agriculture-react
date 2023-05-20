@@ -45,7 +45,7 @@ const Header = ({ login }) => {
         <NavButton
           text='Обсуждения'
           link='/discussions/1'
-          active={currentPage.pathname === "/discussions"}
+          active={currentPage.pathname.includes("/discussions/")}
         />
         {login ? (
           <NavButton

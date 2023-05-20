@@ -11,6 +11,9 @@ const LoginPage = ({ login }) => {
   return (
     <Layout>
       <div className='flex flex-col items-center mb-12'>
+        <p className='text-4xl mb-10 text-neutral-700 text-center'>
+          Войдите в ваш личный аккаунт:
+        </p>
         <p className='text-xl mb-2 text-neutral-700 '>Введите логин:</p>
         <input
           type='text'
@@ -19,7 +22,7 @@ const LoginPage = ({ login }) => {
             setLoginData({ ...loginData, login: e.target.value })
           }
           placeholder='Логин...'
-          className='mb-4 text-2xl focus:outline-none bg-white text-neutral-700 px-8 py-4 placeholder:text-neutral-700 rounded-xl focus:border-green-600 border-green-400 border-2 transition-all duration-300'
+          className='mb-10 text-2xl focus:outline-none bg-white text-neutral-700 px-8 py-4 placeholder:text-neutral-700 rounded-xl focus:border-green-600 border-green-400 border-2 transition-all duration-300'
         />
         <p className='text-xl mb-2 text-neutral-700'>Введите пароль:</p>
         <input

@@ -1,6 +1,7 @@
 import { Layout } from "../components/Layout";
 import { PageTitle } from "../components/PageTitle";
 import ProfileImg from "../assets/avatar.png";
+import { Button } from "../ui/Button";
 
 const ProfilePage = ({ setIsLogged }) => {
   return (
@@ -14,21 +15,27 @@ const ProfilePage = ({ setIsLogged }) => {
         />
         <p className='text-2xl font-bold mb-4'>Данил Панов</p>
         <div className='flex items-center space-x-2'>
-          <p className='text-2xl font-semibold'>Местоположение:</p>
-          <p className='text-2xl'>г. Москва, Российская Федерация</p>
+          <span className='text-2xl font-semibold'>Местоположение:</span>
+          <span className='text-2xl'>г. Москва, Российская Федерация</span>
         </div>
-        <div className='flex items-center space-x-2 mb-8'>
-          <p className='text-2xl font-semibold'>E-mail:</p>
-          <p className='text-2xl'>danilpanov@mtuci.ru</p>
+        <div className='items-center space-x-2'>
+          <span className='text-2xl font-semibold'>E-mail:</span>
+          <span className='text-2xl'>danilpanov@mtuci.ru</span>
         </div>
-        <button
+        <div className='items-center space-x-2 mb-8'>
+          <span className='text-2xl font-semibold'>Пароль:</span>
+          <span className='text-2xl'>***************</span>
+          <p className='text-xl text-green-300 cursor-pointer text-center'>
+            Сменить пароль
+          </p>
+        </div>
+        <Button
           onClick={() => {
             setIsLogged(false);
           }}
-          className='rounded-2xl bg-green-400 text-2xl mb-4 px-14 py-3 text-white hover:text-black hover:bg-white transition-all duration-300 cursor-pointer hover:border-2 border-2 border-green-400'
         >
           Выйти
-        </button>
+        </Button>
       </div>
     </Layout>
   );

@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import VacancyIcon from "../assets/vacancy.png";
 import { Modal } from "./Modal";
 import { Input } from "../ui/Input";
 import { Textarea } from "../ui/Textarea";
+import { useNavigate } from "react-router-dom";
+import { LoginContext } from "../context";
 
 const VacancyBlock = ({ title, desc }) => {
   const formInitial = {
@@ -14,6 +16,8 @@ const VacancyBlock = ({ title, desc }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState(formInitial);
   const [formError, setFormError] = useState(false);
+  const isLogged = useContext(LoginContext);
+  const navigate = useNavigate();
 
   return (
     <div className='bg-gray-100 mb-4 px-4 py-4 rounded-md'>
@@ -23,7 +27,11 @@ const VacancyBlock = ({ title, desc }) => {
       </div>
       <p className='mb-4'>{desc}</p>
       <button
-        onClick={() => setIsModalOpen(true)}
+        onClick={() => {
+          if (isLogged) {
+            setIsModalOpen(true);
+          } else navigate("/login");
+        }}
         className='rounded-2xl px-4 py-2 font-semibold bg-green-400 hover:text-white transition-all duration-300'
       >
         Откликнуться

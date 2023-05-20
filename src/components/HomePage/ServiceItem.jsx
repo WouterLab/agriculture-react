@@ -1,10 +1,17 @@
-const ServiceItem = ({ title, icon, desc }) => {
+import { useNavigate } from "react-router-dom";
+
+const ServiceItem = ({ title, icon, desc, link }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className='min-w-[200px] min-h-[180px] w-1/3 xl:w-[40%] cursor-pointer border rounded-xl hover:shadow-xl transition-all duration-300 p-4 bg-neutral-50'>
-      <h3 className='font-bold xl:text-lg text-[#323234] mb-2 text-elipsis overflow-hidden'>
+    <div
+      onClick={() => navigate(link)}
+      className='min-w-[200px] min-h-[180px] w-4/5 cursor-pointer border rounded-xl hover:shadow-xl transition-all duration-300 p-4 bg-neutral-50'
+    >
+      <h3 className='font-bold xl:text-3xl text-[#323234] text-xl mb-2 text-elipsis overflow-hidden'>
         {title}
       </h3>
-      <p className='text-green-400'>{desc}</p>
+      <p className='text-green-400 text-xl'>{desc}</p>
     </div>
   );
 };

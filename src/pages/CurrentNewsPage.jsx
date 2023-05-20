@@ -47,9 +47,7 @@ const CurrentNewsPage = () => {
             подсластителей и тропических продуктов, таких как кофе и какао.
           </p>
         </div>
-        <Button className='mb-8' onClick={() => navigate("/news")}>
-          Назад
-        </Button>
+        <Button onClick={() => navigate("/news")}>Назад</Button>
       </div>
     </Layout>
   );

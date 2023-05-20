@@ -62,7 +62,7 @@ const NewsPage = () => {
             />
           ))}
         </div>
-        <Button className='mb-10'>Загрузить ещё</Button>
+        <Button>Загрузить ещё</Button>
       </div>
     </Layout>
   );

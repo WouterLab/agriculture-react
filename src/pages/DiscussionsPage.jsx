@@ -43,8 +43,9 @@ const DiscussionsPage = () => {
               <Link
                 to='/discussions/1'
                 className={
-                  pathname === "/discussions/1" &&
-                  "text-green-400 pointer-events-none"
+                  pathname === "/discussions/1"
+                    ? "text-green-400 pointer-events-none"
+                    : ""
                 }
               >
                 1
@@ -52,8 +53,9 @@ const DiscussionsPage = () => {
               <Link
                 to='/discussions/2'
                 className={
-                  pathname === "/discussions/2" &&
-                  "text-green-400 pointer-events-none"
+                  pathname === "/discussions/2"
+                    ? "text-green-400 pointer-events-none"
+                    : ""
                 }
               >
                 2
@@ -61,8 +63,9 @@ const DiscussionsPage = () => {
               <Link
                 to='/discussions/3'
                 className={
-                  pathname === "/discussions/3" &&
-                  "text-green-400 pointer-events-none"
+                  pathname === "/discussions/3"
+                    ? "text-green-400 pointer-events-none"
+                    : ""
                 }
               >
                 3
@@ -70,8 +73,9 @@ const DiscussionsPage = () => {
               <Link
                 to='/discussions/4'
                 className={
-                  pathname === "/discussions/4" &&
-                  "text-green-400 pointer-events-none"
+                  pathname === "/discussions/4"
+                    ? "text-green-400 pointer-events-none"
+                    : ""
                 }
               >
                 4
@@ -79,8 +83,9 @@ const DiscussionsPage = () => {
               <Link
                 to='/discussions/5'
                 className={
-                  pathname === "/discussions/5" &&
-                  "text-green-400 pointer-events-none"
+                  pathname === "/discussions/5"
+                    ? "text-green-400 pointer-events-none"
+                    : ""
                 }
               >
                 5
@@ -90,7 +95,9 @@ const DiscussionsPage = () => {
           <div className='w-5/6'>
             {themes.map((theme) => {
               if (search === "")
-                return <ThemeCard key={theme.id} title={theme.title} />;
+                return (
+                  <ThemeCard key={theme.id} id={theme.id} title={theme.title} />
+                );
               else if (
                 theme.title.toLowerCase().indexOf(search.toLowerCase()) >= 0
               ) {

@@ -17,7 +17,7 @@ const ArticleBlock = ({
 
   return (
     <div
-      className='w-72 cursor-pointer bg-neutral-50 rounded-lg overflow-hidden'
+      className='w-72 cursor-pointer bg-neutral-100 rounded-lg overflow-hidden'
       onClick={() => {
         navigate(`/articles/${id}`);
         localStorage.setItem("article-title", title);
