@@ -9,7 +9,7 @@ const Header = ({ login }) => {
   const currentPage = useLocation();
   const [isNavActive, setNavActive] = useState(false);
   return (
-    <header className='fixed h-20 top-0 bg-[#F3FCF7] w-full flex justify-between items-center z-50'>
+    <header className='fixed h-20 top-0 bg-[#F3FCF7] w-full flex justify-between items-center z-[500]'>
       <Link to='/'>
         <img className='w-16 ml-12 cursor-pointer' src={LogoIcon} alt='logo' />
       </Link>
@@ -69,7 +69,7 @@ const Header = ({ login }) => {
             exit={{ x: 100, opacity: 0 }}
             transition={{ ease: "easeInOut", duration: 0.5 }}
             key='burger'
-            className='md:hidden flex flex-col absolute h-screen top-0 right-0 w-full justify-between py-8 items-center bg-[#F3FCF7] z-50'
+            className='md:hidden flex flex-col absolute h-screen top-0 right-0 w-full justify-between py-8 items-center bg-[#F3FCF7] z-[500]'
           >
             <XMarkIcon
               className='w-12 cursor-pointer'
@@ -105,8 +105,8 @@ const Header = ({ login }) => {
             />
             <NavButton
               text='Обсуждения'
-              link='/discussions'
-              active={currentPage.pathname === "/discussions"}
+              link='/discussions/1'
+              active={currentPage.pathname === "/discussions/"}
             />
             {login ? (
               <NavButton

@@ -10,7 +10,7 @@ const ProductBlock = ({
   sellDate,
 }) => {
   return (
-    <div className='bg-[#F3FCF7] text-neutral-600 rounded-2xl w-[49%] p-4 min-w-[200px]'>
+    <div className='bg-[#F3FCF7] text-neutral-600 rounded-2xl w-full lg:w-[49%] p-4 min-w-[200px]'>
       <div className='flex'>
         <ChartBarIcon className='w-5 inline-block mr-2 text-[#06C167]' />{" "}
         <p className='text-[#06C167] font-semibold text-xl'>{title}</p>

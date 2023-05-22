@@ -34,7 +34,7 @@ const LoginPage = ({ login }) => {
           placeholder='Пароль...'
           className='text-2xl focus:outline-none bg-white text-neutral-700 px-8 py-4 placeholder:text-neutral-700 rounded-xl mb-8 focus:border-green-600 border-green-400 border-2 transition-all duration-300'
         />
-        <div className='space-x-4'>
+        <div className='space-y-4 flex flex-col items-center sm:block sm:space-y-0 sm:space-x-4'>
           <button
             onClick={() => {
               login(loginData);
