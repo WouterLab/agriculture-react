@@ -18,6 +18,7 @@ import { CurrentArticlePage } from "./pages/CurrentArticlePage";
 import { CurrentVacancyPage } from "./pages/CurrentVacancyPage";
 import { CurrentCoopPage } from "./pages/CurrentCoopPage";
 import { CurrentDiscussionPage } from "./pages/CurrentDiscussionPage";
+import { AnalyticsPage } from "./pages/AnalyticsPage";
 
 function App() {
   const [isLogged, setIsLogged] = useState(false);
@@ -40,6 +41,7 @@ function App() {
           <Route path='/articles' element={<ArticlesPage />} />
           <Route path='/articles/:articleId' element={<CurrentArticlePage />} />
           <Route path='/weather' element={<WeatherPage />} />
+          <Route path='/analytics' element={<AnalyticsPage />} />
           <Route path='/vacancy' element={<VacancyPage />} />
           <Route path='/vacancy/:vacancyId' element={<CurrentVacancyPage />} />
           <Route path='/coop' element={<CoopPage />} />

@@ -19,9 +19,9 @@ const ArticleBlock = ({
     <div
       className='w-72 cursor-pointer bg-neutral-100 rounded-lg overflow-hidden'
       onClick={() => {
-        navigate(`/articles/${id}`);
         localStorage.setItem("article-title", title);
         localStorage.setItem("article-image", img);
+        navigate(`/articles/${id}`);
       }}
     >
       <img
