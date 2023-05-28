@@ -1,4 +1,4 @@
-import { Layout } from "../components/Layout";
+import { Layout } from "../shared/Layout";
 import { PageTitle } from "../components/PageTitle";
 
 const CurrentVacancyPage = () => {

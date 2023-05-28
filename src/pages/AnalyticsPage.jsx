@@ -1,4 +1,4 @@
-import { Layout } from "../components/Layout";
+import { Layout } from "../shared/Layout";
 import { PageTitle } from "../components/PageTitle";
 import FinancesImage from "../assets/finances.jpg";
 import AnimalsImage from "../assets/animals.jpg";

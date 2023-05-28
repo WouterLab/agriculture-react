@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Layout } from "../components/Layout";
+import { Layout } from "../shared/Layout";
 
 const LoginPage = ({ login }) => {
   const [loginData, setLoginData] = useState({

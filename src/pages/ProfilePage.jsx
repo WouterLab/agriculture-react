@@ -1,7 +1,7 @@
-import { Layout } from "../components/Layout";
+import { Layout } from "../shared/Layout";
 import { PageTitle } from "../components/PageTitle";
 import ProfileImg from "../assets/avatar.png";
-import { Button } from "../ui/Button";
+import { Button } from "../shared/Button";
 
 const ProfilePage = ({ setIsLogged }) => {
   return (

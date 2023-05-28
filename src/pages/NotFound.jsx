@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Layout } from "../components/Layout";
+import { Layout } from "../shared/Layout";
 
 const NotFound = () => {
   const navigate = useNavigate();

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Layout } from "../components/Layout";
+import { Layout } from "../shared/Layout";
 import { PageTitle } from "../components/PageTitle";
-import { Button } from "../ui/Button";
+import { Button } from "../shared/Button";
 import { useNavigate } from "react-router-dom";
 
 const CurrentArticlePage = () => {

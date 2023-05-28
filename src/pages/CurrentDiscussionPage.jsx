@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
-import { Layout } from "../components/Layout";
+import { Layout } from "../shared/Layout";
 import { UserAnswer } from "../components/UserAnswer";
 import { UserQuestion } from "../components/UserQuestion";
-import { Button } from "../ui/Button";
-import { Textarea } from "../ui/Textarea";
+import { Button } from "../shared/Button";
+import { Textarea } from "../shared/Textarea";
 import { LoginContext } from "../context";
 import { useNavigate } from "react-router-dom";
 

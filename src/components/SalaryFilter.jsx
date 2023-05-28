@@ -1,4 +1,4 @@
-import { Input } from "../ui/Input";
+import { Input } from "../shared/Input";
 
 const SalaryFilter = ({ salaryFilter, setSalaryFilter }) => {
   return (

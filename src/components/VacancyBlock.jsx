@@ -1,8 +1,8 @@
 import { useContext, useState } from "react";
 import VacancyIcon from "../assets/vacancy.png";
 import { Modal } from "./Modal";
-import { Input } from "../ui/Input";
-import { Textarea } from "../ui/Textarea";
+import { Input } from "../shared/Input";
+import { Textarea } from "../shared/Textarea";
 import { useNavigate } from "react-router-dom";
 import { LoginContext } from "../context";
 

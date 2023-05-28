@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Layout } from "../components/Layout";
+import { Layout } from "../shared/Layout";
 import { PageTitle } from "../components/PageTitle";
 import { ThemeCard } from "../components/ThemeCard";
-import { Input } from "../ui/Input";
+import { Input } from "../shared/Input";
 
 const DiscussionsPage = () => {
   const themes = [

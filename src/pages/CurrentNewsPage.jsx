@@ -1,6 +1,6 @@
-import { Layout } from "../components/Layout";
+import { Layout } from "../shared/Layout";
 import NewsImage from "../assets/agriculture-news.jpeg";
-import { Button } from "../ui/Button";
+import { Button } from "../shared/Button";
 import { useNavigate } from "react-router-dom";
 
 const CurrentNewsPage = () => {

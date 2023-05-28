@@ -1,8 +1,8 @@
 import { AgropromDocs } from "../components/AgropromDocs";
 import { CurrentPrices } from "../components/CurrentPrices";
-import { HomeImage } from "../components/HomePage/HomeImage";
-import { HomeLinkBlock } from "../components/HomePage/HomeLinkBlock";
-import { Layout } from "../components/Layout";
+import { HomeImage } from "../components/HomeImage";
+import { HomeLinkBlock } from "../components/HomeLinkBlock";
+import { Layout } from "../shared/Layout";
 import { Vacancy } from "../components/Vacancy";
 
 const HomePage = () => {

@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 
 const HomeImage = () => {
+  const [imageStyle, setImageStyle] = useState({});
+  const [textStyle, setTextStyle] = useState({});
+
   const handleMouseMove = (e) => {
     const halfWidth = window.innerWidth / 2;
     const halfHeight = window.screen.availHeight / 2;
@@ -20,12 +23,12 @@ const HomeImage = () => {
     setImageStyle(newStyleImg);
     setTextStyle(newStyleText);
   };
-  const [imageStyle, setImageStyle] = useState({});
-  const [textStyle, setTextStyle] = useState({});
+
   useEffect(() => {
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
+
   return (
     <div className='relative'>
       <img

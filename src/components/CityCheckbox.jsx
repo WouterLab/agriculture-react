@@ -1,17 +1,16 @@
-import { useState } from "react";
-import { Input } from "../ui/Input";
+import { Input } from "../shared/Input";
 
-const CityCheckbox = ({ city }) => {
-  const [checked, setChecked] = useState(false);
-
+const CityCheckbox = ({ city, setRegionFilter, regionFilter, region }) => {
   return (
     <div className='flex items-center space-x-2 mb-2'>
       <Input
         type='checkbox'
         style={{ marginBottom: 0, minWidth: 20, minHeight: 20 }}
         className='w-5 h-5'
-        checked={checked}
-        onChange={() => setChecked(!checked)}
+        checked={regionFilter[region]}
+        onChange={() => {
+          setRegionFilter({ ...regionFilter, [region]: !regionFilter[region] });
+        }}
       />
       <p>{city}</p>
     </div>

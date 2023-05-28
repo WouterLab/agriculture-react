@@ -1,8 +1,8 @@
 import { BriefcaseIcon } from "@heroicons/react/24/outline";
 import { Modal } from "./Modal";
 import { useContext, useState } from "react";
-import { Input } from "../ui/Input";
-import { Textarea } from "../ui/Textarea";
+import { Input } from "../shared/Input";
+import { Textarea } from "../shared/Textarea";
 import { LoginContext } from "../context";
 import { useNavigate } from "react-router-dom";
 

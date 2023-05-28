@@ -1,5 +1,5 @@
 import { createPortal } from "react-dom";
-import { Button } from "../ui/Button";
+import { Button } from "../shared/Button";
 import CloseIcon from "../assets/close.png";
 
 export const Modal = ({

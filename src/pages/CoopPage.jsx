@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { CityFilter } from "../components/CityFilter";
 import { CoopBlock } from "../components/CoopBlock";
-import { Layout } from "../components/Layout";
+import { Layout } from "../shared/Layout";
 import { PageTitle } from "../components/PageTitle";
-import { Input } from "../ui/Input";
+import { Input } from "../shared/Input";
 import { useEffect, useState } from "react";
 
 const persons = [

@@ -1,4 +1,4 @@
-import { Input } from "../ui/Input";
+import { Input } from "../shared/Input";
 
 const ScheduleFilter = ({ scheduleFilter, setScheduleFilter }) => {
   return (
@@ -6,11 +6,24 @@ const ScheduleFilter = ({ scheduleFilter, setScheduleFilter }) => {
       <p className='mb-2 text-lg'>График работы</p>
       <div
         className='flex space-x-2 cursor-pointer'
+        onClick={() => setScheduleFilter("any")}
+      >
+        <Input
+          type='radio'
+          value='any'
+          checked={scheduleFilter === "any"}
+          className='mb-0 w-5 cursor-pointer'
+          readOnly
+        />
+        <p>Любой</p>
+      </div>
+      <div
+        className='flex space-x-2 cursor-pointer'
         onClick={() => setScheduleFilter("full")}
       >
         <Input
           type='radio'
-          value='none'
+          value='full'
           checked={scheduleFilter === "full"}
           className='mb-0 w-5 cursor-pointer'
           readOnly
@@ -23,7 +36,7 @@ const ScheduleFilter = ({ scheduleFilter, setScheduleFilter }) => {
       >
         <Input
           type='radio'
-          value='15'
+          value='remote'
           checked={scheduleFilter === "remote"}
           className='mb-0 w-5 cursor-pointer'
           readOnly
@@ -36,7 +49,7 @@ const ScheduleFilter = ({ scheduleFilter, setScheduleFilter }) => {
       >
         <Input
           type='radio'
-          value='30'
+          value='flex'
           checked={scheduleFilter === "flex"}
           className='mb-0 w-5 cursor-pointer'
           readOnly
@@ -49,7 +62,7 @@ const ScheduleFilter = ({ scheduleFilter, setScheduleFilter }) => {
       >
         <Input
           type='radio'
-          value='50'
+          value='change'
           checked={scheduleFilter === "change"}
           className='mb-0 w-5 cursor-pointer'
           readOnly
@@ -62,7 +75,7 @@ const ScheduleFilter = ({ scheduleFilter, setScheduleFilter }) => {
       >
         <Input
           type='radio'
-          value='75'
+          value='shift'
           checked={scheduleFilter === "shift"}
           className='mb-0 w-5 cursor-pointer'
           readOnly

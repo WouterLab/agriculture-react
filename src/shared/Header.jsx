@@ -1,4 +1,4 @@
-import { NavButton } from "../ui/NavButton";
+import { NavButton } from "./NavButton";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Bars4Icon, XMarkIcon } from "@heroicons/react/24/outline";
