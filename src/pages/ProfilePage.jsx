@@ -11,7 +11,7 @@ const ProfilePage = ({ setIsLogged }) => {
         <img
           src={ProfileImg}
           alt='profile'
-          className='rounded-full w-[300px] h-[300px] mt-4 mb-8'
+          className='rounded-full w-[300px] h-[300px] mt-4 mb-8 shadow-2xl opacity-90'
         />
         <p className='text-2xl font-bold mb-4'>Данил Панов</p>
         <div className='flex flex-col md:flex-row items-center text-center mb-4 md:mb-0 space-x-2'>
