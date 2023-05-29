@@ -8,10 +8,9 @@ const CurrentNewsPage = () => {
 
   return (
     <Layout>
-      <div className='flex flex-col items-center w-full md:w-2/3 mx-auto px-16'>
+      <div className='flex flex-col items-center w-full md:w-2/3 mx-auto px-8'>
         <p className='text-4xl text-[#06C167] font-semibold mb-10 text-center'>
-          Экспорт сельскохозяйственной продукции США вырос на 14% до рекордного
-          уровня
+          Экспорт сельскохоз продукции США вырос на 14% до рекордного уровня
         </p>
         <div>
           <img

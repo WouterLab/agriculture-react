@@ -24,8 +24,10 @@ const CurrentArticlePage = () => {
     <Layout>
       <div className='flex flex-col items-center'>
         <PageTitle title='СТАТЬЯ' />
-        <p className='w-3/5 text-center text-2xl mb-12'>{articleTitle}</p>
-        <div className='w-3/5 mb-8 text-xl'>
+        <p className='md:w-3/5 w-full px-8 text-center text-2xl mb-12'>
+          {articleTitle}
+        </p>
+        <div className='md:w-3/5 w-full px-8 mb-8 text-xl'>
           <img
             src={articleImage}
             alt='article'

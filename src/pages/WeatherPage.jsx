@@ -75,12 +75,12 @@ const WeatherPage = () => {
     <Layout>
       <div className='flex flex-col items-center'>
         <PageTitle title='ПОГОДА' />
-        <p className='w-3/5 text-center text-xl mb-12'>
+        <p className='md:w-3/5 w-full px-8 text-center text-xl mb-12'>
           Будьте в курсе текущих погодных условий для вашей фермы, включая
           температуру, скорость ветра и видимость. Эта страница также содержит
           24-часовой и 7-дневный прогноз.
         </p>
-        <div className='w-3/5 flex flex-col'>
+        <div className='md:w-3/5 w-full px-8 flex flex-col'>
           <h3 className='text-xl mb-2'>Поиск по населенным пунктам:</h3>
           <input
             type='text'

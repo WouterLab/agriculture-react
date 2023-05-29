@@ -75,7 +75,7 @@ const ArticlesPage = () => {
     <Layout>
       <div className='flex flex-col items-center'>
         <PageTitle title='СТАТЬИ' />
-        <p className='w-3/5 text-center text-xl mb-12'>
+        <p className='md:w-3/5 w-full px-8 text-center text-xl mb-12'>
           Журналисты Agriculture.ru путешествуют по фермам, отраслевым
           мероприятиям и конференциям. Прочтите статьи, чтобы узнать, как
           редакторы освещают свои вопросы, чтобы предоставить вам лучшую

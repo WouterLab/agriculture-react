@@ -45,7 +45,7 @@ const NewsPage = () => {
     <Layout>
       <div className='flex flex-col items-center'>
         <PageTitle title='НОВОСТИ' />
-        <p className='w-3/5 text-center text-xl mb-12'>
+        <p className='md:w-3/5 w-full px-8 text-center text-xl mb-12'>
           В этом разделе вы найдете последние новости в области сельского
           хозяйства, в том числе новости о сельскохозяйственной политике,
           бизнесе, машинах и технологиях. В этом разделе также освещаются
@@ -53,7 +53,7 @@ const NewsPage = () => {
           животноводстве по крупному рогатому скоту, парнокопытному скоту и
           птице.
         </p>
-        <div className='w-3/5 mb-8'>
+        <div className='md:w-3/5 w-full px-8 mb-8'>
           {news.map((news) => (
             <NewsCard
               key={news.id}

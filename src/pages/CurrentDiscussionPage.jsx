@@ -97,7 +97,7 @@ const CurrentDiscussionPage = () => {
 
   return (
     <Layout>
-      <div className='flex flex-col items-center'>
+      <div className='flex flex-col items-center px-8'>
         <h3 className='text-green-400 font-bold text-4xl mb-8'>
           Как защитить свою ферму от кукурузного жука?
         </h3>
@@ -105,7 +105,7 @@ const CurrentDiscussionPage = () => {
           Обсуждение интересующих вопросов фермерами и дачниками, решение
           вопросов и предложения по реализации товаров сельского хозяйства.
         </p>
-        <div className='w-3/5 mb-8'>
+        <div className='md:w-3/5 w-full mb-8'>
           <p className='text-3xl'>Тема:</p>
           <UserQuestion />
           <Button
@@ -137,7 +137,7 @@ const CurrentDiscussionPage = () => {
             value={userAnswer}
             onChange={(e) => setUserAnswer(e.target.value)}
             onKeyPress={(e) => {
-              if (e.key === "Enter") {
+              if (isLogged && e.key === "Enter") {
                 handleClick();
               }
               return;
