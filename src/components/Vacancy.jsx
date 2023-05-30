@@ -3,6 +3,7 @@ import { VacancyItem } from "./VacancyItem";
 
 const Vacancy = () => {
   const [vacancies, setVacancies] = useState([]);
+
   useEffect(() => {
     const data = [
       {

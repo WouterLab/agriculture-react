@@ -9,6 +9,7 @@ export const Modal = ({
   onSend,
   children,
   error,
+  offer,
 }) => {
   if (!isOpen) return null;
 
@@ -17,7 +18,7 @@ export const Modal = ({
       <div className='relative w-full max-w-[800px] h-[600px] bg-white md:p-12 rounded-2xl flex justify-center items-center flex-col gap-4 text-2xl text-center'>
         <p>{message}</p>
         {children}
-        <Button onClick={onSend}>Отправить</Button>
+        {!offer && <Button onClick={onSend}>Отправить</Button>}
         {error && <p className='text-red-500'>Проверьте данные</p>}
         <img
           src={CloseIcon}

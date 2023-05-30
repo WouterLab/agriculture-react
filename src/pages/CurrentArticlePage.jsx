@@ -61,7 +61,14 @@ const CurrentArticlePage = () => {
           тонн против 17,9 млн тонн. Овощей собрано 13,02 млн тонн против 13,03
           млн тонн в 2021 году.
         </div>
-        <Button onClick={() => navigate("/articles")}>Назад</Button>
+        <Button
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            navigate("/articles");
+          }}
+        >
+          Назад
+        </Button>
       </div>
     </Layout>
   );

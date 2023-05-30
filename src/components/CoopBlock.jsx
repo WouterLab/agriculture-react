@@ -6,7 +6,7 @@ import { Textarea } from "../shared/Textarea";
 import { LoginContext } from "../context";
 import { useNavigate } from "react-router-dom";
 
-const CoopBlock = ({ title, desc }) => {
+const CoopBlock = ({ title, desc, price, phone, region }) => {
   const formInitial = {
     name: "",
     email: "",
@@ -21,21 +21,40 @@ const CoopBlock = ({ title, desc }) => {
 
   return (
     <div className='bg-gray-100 mb-4 px-2 py-4 rounded-md'>
-      <div className='flex items-center mb-6 sm:mb-2'>
-        <BriefcaseIcon className='w-12' />
-        <p className='font-bold text-2xl'>{title}</p>
+      <div className='flex gap-8'>
+        <div className='flex flex-col gap-2 items-center'>
+          <BriefcaseIcon className='w-28' />
+          <button
+            onClick={() => {
+              if (isLogged) {
+                setIsModalOpen(true);
+              } else {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                navigate("/login");
+              }
+            }}
+            className='rounded-2xl px-4 py-2 font-semibold bg-green-400 hover:text-white transition-all duration-300'
+          >
+            Связаться
+          </button>
+        </div>
+        <div className='py-4'>
+          <p className='font-bold text-2xl mb-4'>{title}</p>
+          <p className='line-clamp-3 text-xl font-semibold'>{desc}</p>
+          <p className='line-clamp-3 text-xl font-semibold'>
+            Цена за ед. товара: <span className='font-bold'>{price} ₽</span>
+          </p>
+          {isLogged ? (
+            <p className='text-neutral-500 line-clamp-3 text-xl font-semibold'>
+              Телефон для связи: <span className='font-bold'>{phone}</span>
+            </p>
+          ) : (
+            <p className='text-neutral-500 line-clamp-3 text-xl font-semibold'>
+              Телефон виден только авторизованным пользователям
+            </p>
+          )}
+        </div>
       </div>
-      <p className='mb-4 line-clamp-3'>{desc}</p>
-      <button
-        onClick={() => {
-          if (isLogged) {
-            setIsModalOpen(true);
-          } else navigate("/login");
-        }}
-        className='rounded-2xl px-4 py-2 font-semibold bg-green-400 hover:text-white transition-all duration-300'
-      >
-        Связаться
-      </button>
       <Modal
         message='Отправка заявки'
         isOpen={isModalOpen}

@@ -37,10 +37,12 @@ const Header = ({ login }) => {
         <NavButton
           text='Вакансии'
           link='/vacancy'
-          active={
-            currentPage.pathname === "/vacancy" ||
-            currentPage.pathname === "/coop"
-          }
+          active={currentPage.pathname === "/vacancy"}
+        />
+        <NavButton
+          text='Предложения'
+          link='/offers'
+          active={currentPage.pathname === "/offers"}
         />
         <NavButton
           text='Обсуждения'
@@ -98,10 +100,12 @@ const Header = ({ login }) => {
             <NavButton
               text='Вакансии'
               link='/vacancy'
-              active={
-                currentPage.pathname === "/vacancy" ||
-                currentPage.pathname === "/coop"
-              }
+              active={currentPage.pathname === "/vacancy"}
+            />
+            <NavButton
+              text='Предложения'
+              link='/offers'
+              active={currentPage.pathname === "/offers"}
             />
             <NavButton
               text='Обсуждения'

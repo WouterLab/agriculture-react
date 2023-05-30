@@ -7,7 +7,10 @@ const Footer = () => {
       <p>Copyright © 2022 Agroprom.ru</p>
       <p
         className='underline cursor-pointer'
-        onClick={() => navigate("/privacy")}
+        onClick={() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+          navigate("/privacy");
+        }}
       >
         Политика конфиденциальности
       </p>

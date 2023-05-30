@@ -5,7 +5,10 @@ const ServiceItem = ({ title, icon, desc, link }) => {
 
   return (
     <div
-      onClick={() => navigate(link)}
+      onClick={() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        navigate(link);
+      }}
       className='min-w-[200px] min-h-[180px] w-4/5 cursor-pointer border rounded-xl hover:shadow-xl transition-all duration-300 p-4 bg-neutral-50'
     >
       <h3 className='font-bold xl:text-3xl text-[#323234] text-xl mb-2 text-elipsis overflow-hidden'>

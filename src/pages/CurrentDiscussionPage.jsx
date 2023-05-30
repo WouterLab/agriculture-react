@@ -111,6 +111,7 @@ const CurrentDiscussionPage = () => {
           <Button
             onClick={() => {
               if (!isLogged) {
+                window.scrollTo({ top: 0, behavior: "smooth" });
                 navigate("/login");
               } else {
                 window.scrollTo({

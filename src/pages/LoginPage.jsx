@@ -11,10 +11,10 @@ const LoginPage = ({ login }) => {
   return (
     <Layout>
       <div className='flex flex-col items-center mb-12'>
-        <p className='text-4xl mb-10 text-neutral-700 text-center'>
-          Войдите в ваш личный аккаунт:
+        <p className='text-4xl mb-8 text-neutral-700 text-center font-semibold'>
+          Войдите в личный аккаунт:
         </p>
-        <p className='text-xl mb-2 text-neutral-700 '>Введите логин:</p>
+        <p className='mb-2 text-neutral-700 text-3xl'>Введите логин:</p>
         <input
           type='text'
           value={loginData.login}
@@ -22,9 +22,9 @@ const LoginPage = ({ login }) => {
             setLoginData({ ...loginData, login: e.target.value })
           }
           placeholder='Логин...'
-          className='mb-10 text-2xl focus:outline-none bg-white text-neutral-700 px-8 py-4 placeholder:text-neutral-700 rounded-xl focus:border-green-600 border-green-400 border-2 transition-all duration-300'
+          className='mb-6 text-2xl focus:outline-none bg-white text-neutral-700 px-8 py-4 placeholder:text-neutral-700 rounded-xl focus:border-green-600 border-green-400 border-2 transition-all duration-300'
         />
-        <p className='text-xl mb-2 text-neutral-700'>Введите пароль:</p>
+        <p className='mb-2 text-neutral-700 text-3xl'>Введите пароль:</p>
         <input
           type='password'
           value={loginData.password}

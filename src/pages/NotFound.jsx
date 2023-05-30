@@ -6,6 +6,7 @@ const NotFound = () => {
   const navigate = useNavigate();
   useEffect(() => {
     setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
       navigate("/");
     }, 3000);
     // eslint-disable-next-line react-hooks/exhaustive-deps

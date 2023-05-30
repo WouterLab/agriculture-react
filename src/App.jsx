@@ -8,7 +8,7 @@ import { NotFound } from "./pages/NotFound";
 import { WeatherPage } from "./pages/WeatherPage";
 import { ArticlesPage } from "./pages/ArticlesPage";
 import { VacancyPage } from "./pages/VacancyPage";
-import { CoopPage } from "./pages/CoopPage";
+import { OffersPage } from "./pages/OffersPage";
 import { PrivacyPolicyPage } from "./pages/PrivacyPolicyPage";
 import React, { useState } from "react";
 import { ProfilePage } from "./pages/ProfilePage";
@@ -16,9 +16,10 @@ import { LoginContext } from "./context";
 import { CurrentNewsPage } from "./pages/CurrentNewsPage";
 import { CurrentArticlePage } from "./pages/CurrentArticlePage";
 import { CurrentVacancyPage } from "./pages/CurrentVacancyPage";
-import { CurrentCoopPage } from "./pages/CurrentCoopPage";
 import { CurrentDiscussionPage } from "./pages/CurrentDiscussionPage";
 import { AnalyticsPage } from "./pages/AnalyticsPage";
+import { CalculatorPage } from "./pages/CalculatorPage";
+import { CalendaryPage } from "./pages/CalendaryPage";
 
 function App() {
   const [isLogged, setIsLogged] = useState(false);
@@ -44,8 +45,9 @@ function App() {
           <Route path='/analytics' element={<AnalyticsPage />} />
           <Route path='/vacancy' element={<VacancyPage />} />
           <Route path='/vacancy/:vacancyId' element={<CurrentVacancyPage />} />
-          <Route path='/coop' element={<CoopPage />} />
-          <Route path='/coop/:coopId' element={<CurrentCoopPage />} />
+          <Route path='/offers' element={<OffersPage />} />
+          <Route path='/calc' element={<CalculatorPage />} />
+          <Route path='/calendary' element={<CalendaryPage />} />
           <Route path='/discussions/1' element={<DiscussionsPage />} />
           <Route
             path='/discussions/:discussionsPage'

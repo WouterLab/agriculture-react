@@ -30,7 +30,10 @@ const VacancyBlock = ({ title, desc }) => {
         onClick={() => {
           if (isLogged) {
             setIsModalOpen(true);
-          } else navigate("/login");
+          } else {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            navigate("/login");
+          }
         }}
         className='rounded-2xl px-4 py-2 font-semibold bg-green-400 hover:text-white transition-all duration-300'
       >

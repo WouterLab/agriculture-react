@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { CityFilter } from "../components/CityFilter";
 import { Layout } from "../shared/Layout";
 import { PageTitle } from "../components/PageTitle";
@@ -213,11 +212,6 @@ const VacancyPage = () => {
       <div className='flex flex-col items-center px-2 sm:px-16'>
         <div className='flex flex-col md:flex-row items-center space-x-4 mb-8'>
           <PageTitle title='ВАКАНСИИ' />
-          <Link to='/coop'>
-            <h2 className='text-4xl font-bold text-neutral-500 underline'>
-              СОТРУДНИЧЕСТВО
-            </h2>
-          </Link>
         </div>
         <div className='flex flex-col md:flex-row justify-center w-full gap-10'>
           <aside>

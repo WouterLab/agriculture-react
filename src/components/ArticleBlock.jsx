@@ -21,6 +21,7 @@ const ArticleBlock = ({
       onClick={() => {
         localStorage.setItem("article-title", title);
         localStorage.setItem("article-image", img);
+        window.scrollTo({ top: 0, behavior: "smooth" });
         navigate(`/articles/${id}`);
       }}
     >
