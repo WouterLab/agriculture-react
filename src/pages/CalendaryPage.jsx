@@ -198,6 +198,10 @@ const CalendaryPage = () => {
           событий, чтобы не упустить возможность принять участие в важных
           событиях агропромышленной отрасли.
         </p>
+        <p className='text-xl md:text-5xl mb-10'>
+          События и мероприятия в{" "}
+          <span className='text-green-400 font-bold'>Июне</span>
+        </p>
         <div className='w-5/6 mb-8 flex flex-wrap'>
           {events.map((event) => (
             <CalendaryDay
