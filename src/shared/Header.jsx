@@ -71,10 +71,10 @@ const Header = ({ login }) => {
             exit={{ x: 100, opacity: 0 }}
             transition={{ ease: "easeInOut", duration: 0.5 }}
             key='burger'
-            className='md:hidden flex flex-col absolute h-screen top-0 right-0 w-full gap-10 py-12 items-center bg-[#F3FCF7] z-[500]'
+            className='md:hidden flex flex-col absolute h-screen top-0 right-0 w-full gap-6 py-12 items-center bg-[#F3FCF7] z-[500]'
           >
             <XMarkIcon
-              className='w-12 cursor-pointer'
+              className='w-12 min-w-[48px] min-h-[48px] h-12 cursor-pointer'
               onClick={() => setNavActive(false)}
             />
             <NavButton

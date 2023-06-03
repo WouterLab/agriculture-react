@@ -11,7 +11,7 @@ const NavButton = ({ text, active, link }) => {
         {text}
       </p>
       {active && (
-        <p className='text-[#06C167] absolute text-5xl md:text-xl rounded-full text-center w-full md:top-3 top-8'>
+        <p className='text-[#06C167] absolute text-5xl md:text-xl rounded-full text-center w-full md:top-3 top-8 hidden sm:block'>
           •
         </p>
       )}
