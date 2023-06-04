@@ -128,6 +128,7 @@ const Calculator = () => {
           <p className='text-xl'>Затраты на семена (руб.):</p>
           <Input
             type='number'
+            min='0'
             value={calcData.seedCost}
             onChange={handleSeedCostChange}
           />
@@ -146,6 +147,7 @@ const Calculator = () => {
           <p className='text-xl'>Затраты на удобрения (руб.):</p>
           <Input
             type='number'
+            min='0'
             value={calcData.fertilizerCost}
             onChange={handleFertilizerCostChange}
           />
@@ -166,6 +168,7 @@ const Calculator = () => {
           <p className='text-xl'>Стоимость аренды земли (руб.):</p>
           <Input
             type='number'
+            min='0'
             value={calcData.landRentCost}
             onChange={handleLandRentCostChange}
           />
@@ -184,6 +187,7 @@ const Calculator = () => {
           <p className='text-xl'>Затраты на технику и оборудование (руб.):</p>
           <Input
             type='number'
+            min='0'
             value={calcData.machineryCost}
             onChange={handleMachineryCostChange}
           />
@@ -204,6 +208,7 @@ const Calculator = () => {
           <p className='text-xl'>Расходы на топливо и энергию (руб.):</p>
           <Input
             type='number'
+            min='0'
             value={calcData.fuelEnergyCost}
             onChange={handleFuelEnergyCostChange}
           />
@@ -222,6 +227,7 @@ const Calculator = () => {
           <p className='text-xl'>Затраты на охрану и обслуживание (руб.):</p>
           <Input
             type='number'
+            min='0'
             value={calcData.securityMaintenanceCost}
             onChange={handleSecurityMaintenanceCostChange}
           />
@@ -242,6 +248,7 @@ const Calculator = () => {
           <p className='text-xl'>Цена на продукцию (рублей за кг.):</p>
           <Input
             type='number'
+            min='0'
             value={calcData.productPrice}
             onChange={handleProductPriceChange}
           />
@@ -260,6 +267,7 @@ const Calculator = () => {
           <p className='text-xl'>Ожидаемый урожай (кг):</p>
           <Input
             type='number'
+            min='0'
             value={calcData.expectedYield}
             onChange={handleExpectedYieldChange}
           />
@@ -280,6 +288,7 @@ const Calculator = () => {
           <p className='text-xl'>Процентные затраты на финансирование (%):</p>
           <Input
             type='number'
+            min='0'
             value={calcData.financingCostPercentage}
             onChange={handleFinancingCostPercentageChange}
           />
